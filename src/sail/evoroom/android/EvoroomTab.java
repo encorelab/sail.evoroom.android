@@ -35,7 +35,7 @@ public class EvoroomTab extends TabActivity {
 		intent = new Intent().setClass(this, EvolutionConceptsTab.class);
 		spec = tabHost.newTabSpec("evolutionconceptstab").setIndicator("Evolution Concepts", res.getDrawable(R.drawable.evolutionconceptstab)).setContent(intent);
 		tabHost.addTab(spec);
-		
+
 		// set background picture
 		tabHost.setBackgroundResource(R.drawable.background);
 

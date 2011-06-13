@@ -2,5 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="match_parent" android:layout_height="wrap_content"
 	android:id="@+id/evolutionconceptstab">
-	<TextView android:id="@+id/evoConceptsText" android:layout_width="20sp" android:layout_height="40sp" />
+	<TextView android:id="@+id/evoConceptsText" android:layout_width="680sp" android:layout_height="1000sp"
+		android:layout_gravity="center" android:layout_marginLeft="50sp" android:background="#FFFFFF"
+		android:textColor="#00AAFF" />
+<!--  android:textAppearance=" -->
+<!--  set layout_height to wrap content so that it can scroll?		 -->
 </LinearLayout>
