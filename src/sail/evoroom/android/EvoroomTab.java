@@ -38,7 +38,7 @@ public class EvoroomTab extends TabActivity {
 		intent = new Intent().setClass(this, EvolutionConceptsTab.class);
 		spec = tabHost.newTabSpec("evolutionconceptstab").setIndicator("Evolution Concepts").setContent(intent);
 		tabHost.addTab(spec);
-//		tabHost.setBackgroundResource(R.drawable.background);
+		tabHost.setBackgroundResource(R.drawable.background);
 
 
 		// To receive messages in the inquiry tab we set it current
