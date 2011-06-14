@@ -3,16 +3,8 @@
 	android:layout_width="match_parent" android:layout_height="match_parent"
 	android:paddingLeft="35sp" android:paddingRight="35sp"
 	android:id="@+id/evolutionconceptstab" >
-	<!-- <TextView android:id="@+id/evoConceptsText" android:layout_width="680sp" android:layout_height="1000sp"
-		android:layout_gravity="center" android:layout_marginLeft="50sp" android:background="#FFFFFF"
-		android:textColor="#00AAFF" android:padding="16sp" /> -->
-<!--	<TextView android:id="@+id/evoConceptsText"-->
-<!--		android:layout_width="match_parent" android:layout_height="match_parent"-->
-<!--		android:layout_gravity="center"-->
-<!--		android:background="#FFFFFF" android:textColor="#00AAFF"-->
-<!--		android:padding="20sp"/>-->
 	
-		<LinearLayout android:id="@+id/evoConceptsText"
+		<LinearLayout android:id="@+id/evoConceptsWrapper"
 			android:layout_width="match_parent" android:layout_height="match_parent"
 			android:layout_gravity="center"
 			android:background="#FFFFFF" android:padding="20sp" >
@@ -64,8 +56,4 @@
 				</LinearLayout>
 			</ScrollView>
 		</LinearLayout>
-	
-
-<!--  android:textAppearance=" -->
-<!--  set layout_height to wrap content so that it can scroll?		 -->
 </LinearLayout>
