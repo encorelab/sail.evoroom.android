@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical"
+  android:paddingTop="250sp">
+		<TextView android:layout_width="600sp" android:layout_height="80sp" android:layout_gravity="center"
+			android:background="#FFFFFF" android:textSize="20sp" />
+		<TextView android:layout_width="600sp" android:layout_height="1sp" android:layout_gravity="center"
+			android:background="#000000" />
+		<TextView android:layout_width="600sp" android:layout_height="80sp" android:layout_gravity="center"
+			android:paddingRight="40sp"
+			android:background="#FFFFFF" android:textColor="#000000" android:textSize="20sp"
+			android:drawableRight="@drawable/arrow_btn" />
+<!-- 			android:text="Sundaland Flora &amp; Fauna" -->
+		<TextView android:layout_width="600sp" android:layout_height="1sp" android:layout_gravity="center"
+			android:background="#000000" />
+		<TextView android:layout_width="600sp" android:layout_height="80sp" android:layout_gravity="center"
+			android:paddingRight="40sp"
+			android:background="#FFFFFF" android:textColor="#000000" android:textSize="20sp"
+			android:drawableRight="@drawable/arrow_btn" />
+<!-- 			android:text="Borneo Flora &amp; Fauna"  -->
+		<TextView android:layout_width="600sp" android:layout_height="1sp" android:layout_gravity="center"
+			android:background="#000000" />
+		<TextView android:layout_width="600sp" android:layout_height="80sp" android:layout_gravity="center"
+			android:paddingRight="40sp"
+			android:background="#FFFFFF" android:textColor="#000000" android:textSize="20sp"
+			android:drawableRight="@drawable/arrow_btn" />
+<!-- 			android:text="Sumatra Flora &amp; Fauna"  -->
+		<TextView android:layout_width="600sp" android:layout_height="1sp" android:layout_gravity="center"
+			android:background="#000000" />
+		<Button android:id="@+id/allButton" android:layout_width="600sp" android:layout_height="80sp"
+			android:layout_gravity="center"	android:paddingRight="40sp"
+			android:background="#FFFFFF" android:textColor="#000000" android:textSize="20sp"
+			android:drawableRight="@drawable/arrow_btn" />
+<!-- 			android:text="All areas"  -->
 </LinearLayout>
