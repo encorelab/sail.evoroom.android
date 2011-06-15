@@ -42,7 +42,7 @@ public class EvoroomTab extends TabActivity {
 
 		// To receive messages in the inquiry tab we set it current
 		// and then switch to the observation tab
-		getTabHost().setCurrentTab(1);
+		getTabHost().setCurrentTab(0);
 	}
 
 	public void onDestroy() {
