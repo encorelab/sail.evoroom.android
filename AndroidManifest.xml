@@ -14,14 +14,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-		<activity android:name="ObservationTab" android:label="@string/app_name"
-        		android:theme="@android:style/Theme.NoTitleBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+<!--		<activity android:name="ObservationTab" android:label="@string/app_name"-->
+<!--        		android:theme="@android:style/Theme.NoTitleBar">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+        <activity android:name=".ObservationTab" android:screenOrientation="portrait" />
 		<activity android:name=".ObservationsCloud" android:screenOrientation="portrait" />
+		<activity android:name=".ObservationsEntry" android:screenOrientation="portrait" />
 		<activity android:name=".FieldGuideTab" android:screenOrientation="portrait" />
 		<activity android:name=".EvolutionConceptsTab" android:screenOrientation="portrait" />
 
