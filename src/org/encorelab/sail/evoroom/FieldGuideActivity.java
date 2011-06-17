@@ -9,9 +9,12 @@ import android.widget.Button;
 
 public class FieldGuideActivity extends Activity implements OnClickListener {
 	
-	private Button sundalandButton;
-	private Button borneoButton;
-	private Button sumatraButton;
+	private Button sundalandFloraButton;
+	private Button sundalandFaunaButton;
+	private Button borneoFloraButton;
+	private Button borneoFaunaButton;
+	private Button sumatraFloraButton;
+	private Button sumatraFaunaButton;
 	private Button allButton;
 
 	@Override
@@ -19,17 +22,29 @@ public class FieldGuideActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.field_guide);
 		
-		sundalandButton = (Button) findViewById(R.id.sundalandButton);
-		sundalandButton.setOnClickListener(this);
-		sundalandButton.setText(Html.fromHtml("<b>Sundaland Flora & Fauna</b>" +  "<br />" + 
+		sundalandFloraButton = (Button) findViewById(R.id.sundalandFloraButton);
+		sundalandFloraButton.setOnClickListener(this);
+		sundalandFloraButton.setText(Html.fromHtml("<b>Sundaland Flora</b>" +  "<br />" + 
 		            "<small>2 million years ago</small>"));
-		borneoButton = (Button) findViewById(R.id.borneoButton);
-		borneoButton.setOnClickListener(this);
-		borneoButton.setText(Html.fromHtml("<b>Borneo Flora & Fauna</b>" +  "<br />" + 
+		sundalandFaunaButton = (Button) findViewById(R.id.sundalandFaunaButton);
+		sundalandFaunaButton.setOnClickListener(this);
+		sundalandFaunaButton.setText(Html.fromHtml("<b>Sundaland Fauna</b>" +  "<br />" + 
+		            "<small>2 million years ago</small>"));
+		borneoFloraButton = (Button) findViewById(R.id.borneoFloraButton);
+		borneoFloraButton.setOnClickListener(this);
+		borneoFloraButton.setText(Html.fromHtml("<b>Borneo Flora</b>" +  "<br />" + 
         			"<small>200 years ago</small>"));
-		sumatraButton = (Button) findViewById(R.id.sumatraButton);
-		sumatraButton.setOnClickListener(this);
-		sumatraButton.setText(Html.fromHtml("<b>Sumatra Flora & Fauna</b>" +  "<br />" + 
+		borneoFaunaButton = (Button) findViewById(R.id.borneoFaunaButton);
+		borneoFaunaButton.setOnClickListener(this);
+		borneoFaunaButton.setText(Html.fromHtml("<b>Borneo Fauna</b>" +  "<br />" + 
+        			"<small>200 years ago</small>"));
+		sumatraFloraButton = (Button) findViewById(R.id.sumatraFloraButton);
+		sumatraFloraButton.setOnClickListener(this);
+		sumatraFloraButton.setText(Html.fromHtml("<b>Sumatra Flora</b>" +  "<br />" + 
+					"<small>200 years ago</small>"));
+		sumatraFaunaButton = (Button) findViewById(R.id.sumatraFaunaButton);
+		sumatraFaunaButton.setOnClickListener(this);
+		sumatraFaunaButton.setText(Html.fromHtml("<b>Sumatra Fauna</b>" +  "<br />" + 
 					"<small>200 years ago</small>"));
 		allButton = (Button) findViewById(R.id.allButton);
 		allButton.setOnClickListener(this);
@@ -40,17 +55,29 @@ public class FieldGuideActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch(v.getId()){  
-		case R.id.sundalandButton:
+		case R.id.sundalandFloraButton:
 			// launch activity;
-			sundalandButton.setText("Sunda");
+			sundalandFloraButton.setText("SundaFlora");
 			break;
-		case R.id.borneoButton:
+		case R.id.sundalandFaunaButton:
 			// launch activity;
-			borneoButton.setText("born");
+			sundalandFaunaButton.setText("SundaFauna");
 			break;
-		case R.id.sumatraButton:
+		case R.id.borneoFloraButton:
 			// launch activity;
-			sumatraButton.setText("sumatra");
+			borneoFloraButton.setText("bornFlora");
+			break;
+		case R.id.borneoFaunaButton:
+			// launch activity;
+			borneoFaunaButton.setText("bornFauna");
+			break;
+		case R.id.sumatraFloraButton:
+			// launch activity;
+			sumatraFloraButton.setText("sumatraFlora");
+			break;
+		case R.id.sumatraFaunaButton:
+			// launch activity;
+			sumatraFaunaButton.setText("sumatraFauna");
 			break;
 		case R.id.allButton:
 			// Launch activity;
