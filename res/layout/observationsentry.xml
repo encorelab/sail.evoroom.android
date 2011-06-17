@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent"
+	android:paddingLeft="35sp" android:paddingRight="35sp"
+	android:id="@+id/observationsentry" >
+	<LinearLayout android:id="@+id/evoConceptsWrapper"
+			android:layout_width="match_parent" android:layout_height="match_parent"
+			android:layout_gravity="center" android:orientation="vertical"
+			android:background="#FFFFFF" android:padding="20sp" >
+<!--    <Spinner android:id="@+id/areapicker"-->
+<!--    	android:layout_width="wrap_content" android:layout_height="wrap_content"-->
+<!--    	android:drawSelectorOnTop="true" />-->
+		<Spinner android:id="@+id/itempicker"
+	    	android:layout_width="wrap_content" android:layout_height="wrap_content"
+	    	android:drawSelectorOnTop="true" android:prompt="@string/item_prompt" />
+		<EditText android:hint="Enter your observation here ..." android:id="@+id/enterObservation"
+			android:layout_width="match_parent" android:layout_height="wrap_content" />
+	    <Button android:text="Back Button" android:id="@+id/backbutton"
+	    	android:layout_width="wrap_content" android:layout_height="wrap_content" />
+	</LinearLayout>
+</LinearLayout>
