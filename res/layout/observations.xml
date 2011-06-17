@@ -8,9 +8,6 @@
         <Button android:layout_width="wrap_content" android:text="Cloud" android:layout_height="wrap_content" android:id="@+id/button_to_cloud"></Button>
     </LinearLayout>
 
-	<fragment class="org.encorelab.sail.evoroom.ObservationsEntryFragment"
-		android:id="@+id/observations_entry" android:layout_weight="1"
-		android_width="0px"
-		android:layout_height="match_parent"
-		android:layout_width="match_parent" />
+	<include android:id="@+id/observations_entry_view" layout="@layout/observations_entry" />
+	<include android:id="@+id/observations_cloud_view" layout="@layout/observations_cloud" />
 </LinearLayout>
