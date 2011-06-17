@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent">
+
+	<LinearLayout android:id="@+id/evoConceptsWrapper"
+		android:layout_width="match_parent" android:layout_height="match_parent"
+		android:layout_gravity="center" android:background="#FFFFFF"
+		android:padding="20sp">
+		<ScrollView android:id="@+id/scroll" android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+			<LinearLayout android:id="@+id/evoConceptsText"
+				android:layout_width="match_parent" android:layout_height="wrap_content"
+				android:orientation="vertical" android:background="#FFFFFF">
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:textColor="#00AAFF"
+					android:textSize="30sp" android:text="Adaption" />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:textColor="#000000"
+					android:textSize="20sp"
+					android:text="A feature produced by natural selection for its current function.\n" />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:textColor="#00AAFF"
+					android:textSize="30sp" android:text="Bottleneck" />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:textColor="#000000"
+					android:textSize="20sp"
+					android:text="An event in which a population's size is greatly reduced. When this happens, genetic drift may have a substantial effect on the population. In other words, when the population size is radically reduced, gene frequencies in the population are likely to change just by random chance and many genes may be lost from the population, reducing the population's genetic variation.\n" />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:textColor="#00AAFF"
+					android:textSize="30sp" android:text="Coevolution" />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:textColor="#000000"
+					android:textSize="20sp"
+					android:text="A process in which two or more different species reciprocally effect each other's evolution. For example, species A evolves, which causes species B to evolve, which causes species A to evolve, which causes species B to evolve, etc.\n" />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:textColor="#00AAFF"
+					android:textSize="30sp" android:text="Founder effect" />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:textColor="#000000"
+					android:textSize="20sp"
+					android:text="Changes in gene frequencies that usually accompany starting a new population from a small number of individuals. The newly founded population is likely to have quite different gene frequencies than the source population because of sampling error (i.e., genetic drift). The newly founded population is also likely to have a less genetic variation than the source population.\n" />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:textColor="#00AAFF"
+					android:textSize="30sp" android:text="Gene flow" />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:textColor="#000000"
+					android:textSize="20sp"
+					android:text="The movement of genes between populations. This may happen through the migration of organisms or the movement of gametes (such as pollen blown to a new location).\n" />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:textColor="#00AAFF"
+					android:textSize="30sp" android:text="Natural selection " />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:textColor="#000000"
+					android:textSize="20sp"
+					android:text="Differential survival or reproduction of different genotypes in a population leading to changes in the gene frequencies of a population.\n" />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:textColor="#00AAFF"
+					android:textSize="30sp" android:text="Reproductive isolation" />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:textColor="#000000"
+					android:textSize="20sp"
+					android:text="The environment may impose an external barrier to reproduction, such as a river or mountain range, between two incipient species but that external barrier alone will not make them separate, full-fledged species. Allopatry may start the process off, but the evolution of internal (i.e., genetically-based) barriers to gene flow is necessary for speciation to be complete. If internal barriers to gene flow do not evolve, individuals from the two parts of the population will freely interbreed if they come back into contact. Whatever genetic differences may have evolved will disappear as their genes mix back together. Speciation requires that the two incipient species be unable to produce viable offspring together or that they avoid mating with members of the other group.\n" />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:textColor="#00AAFF"
+					android:textSize="30sp" android:text="Sexual selection" />
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:textColor="#000000"
+					android:textSize="20sp"
+					android:text="Selection acting on an organism's ability to obtain or successfully copulate with a mate. This process may produce traits that seem to decrease an organism's chance of survival, while increasing its chances of mating." />
+			</LinearLayout>
+		</ScrollView>
+	</LinearLayout>
+</LinearLayout>

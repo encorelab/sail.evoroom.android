@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="item_prompt">Choose a item ...</string>
+	<string-array name="colours">
+        <item>red</item>
+        <item>orange</item>
+        <item>yellow</item>
+        <item>green</item>
+        <item>blue</item>
+        <item>purple</item>
+        <item>brown</item>
+        <item>gray</item>
+        <item>pink</item>
+    </string-array>
+    
+    <string-array name="areas">
+        <item>Borneo</item>
+        <item>Sumatra</item>
+        <item>Sundaland</item>
+    </string-array>
+</resources>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent">
+
+	<!-- <TextView android:layout_width="4in" android:layout_height="80sp" android:layout_gravity="center" -->
+	<!-- android:background="#FFFFFF" android:textSize="20sp" /> -->
+	<ImageView android:layout_width="4in" android:layout_height="0.763in"
+		android:src="@drawable/choose_an_area_box_4in" android:layout_gravity="center" />
+	<ImageView android:layout_width="4in" android:layout_height="0.013in"
+		android:layout_gravity="center" android:src="@drawable/dotted_line_4in" />
+	<Button android:id="@+id/sundalandButton" android:layout_width="4in"
+		android:layout_height="80sp" android:layout_gravity="center"
+		android:paddingRight="40sp" android:paddingTop="15sp"
+		android:paddingLeft="40sp" android:gravity="left" android:background="#FFFFFF"
+		android:textColor="#000000" android:textSize="20sp"
+		android:drawableRight="@drawable/arrow_btn" />
+	<ImageView android:layout_width="4in" android:layout_height="0.013in"
+		android:layout_gravity="center" android:src="@drawable/dotted_line_4in" />
+	<!-- <TextView android:layout_width="4in" android:layout_height="1sp" android:layout_gravity="center" -->
+	<!-- android:background="#000000" /> -->
+	<Button android:id="@+id/borneoButton" android:layout_width="4in"
+		android:layout_height="80sp" android:layout_gravity="center"
+		android:paddingRight="40sp" android:paddingTop="15sp"
+		android:paddingLeft="40sp" android:gravity="left" android:background="#FFFFFF"
+		android:textColor="#000000" android:textSize="20sp"
+		android:drawableRight="@drawable/arrow_btn" />
+	<ImageView android:layout_width="4in" android:layout_height="0.013in"
+		android:layout_gravity="center" android:src="@drawable/dotted_line_4in" />
+	<Button android:id="@+id/sumatraButton" android:layout_width="4in"
+		android:layout_height="80sp" android:layout_gravity="center"
+		android:paddingRight="40sp" android:paddingTop="15sp"
+		android:paddingLeft="40sp" android:gravity="left" android:background="#FFFFFF"
+		android:textColor="#000000" android:textSize="20sp"
+		android:drawableRight="@drawable/arrow_btn" />
+	<ImageView android:layout_width="4in" android:layout_height="0.013in"
+		android:layout_gravity="center" android:src="@drawable/dotted_line_4in" />
+	<Button android:id="@+id/allButton" android:layout_width="4in"
+		android:layout_height="80sp" android:layout_gravity="center"
+		android:paddingRight="40sp" android:paddingTop="15sp"
+		android:paddingLeft="40sp" android:gravity="left" android:background="#FFFFFF"
+		android:textColor="#000000" android:textSize="20sp"
+		android:drawableRight="@drawable/arrow_btn" />
+
+</LinearLayout>
