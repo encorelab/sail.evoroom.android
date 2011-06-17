@@ -1,7 +1,14 @@
 package sail.evoroom.android;
 
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import android.R.integer;
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
@@ -19,7 +26,7 @@ public class FieldGuideTab extends Activity implements OnClickListener {
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 		setContentView(R.layout.fieldguidetab);
-
+				
 		sundalandButton = (Button) findViewById(R.id.sundalandButton);
 		sundalandButton.setOnClickListener(this);
 		sundalandButton.setText(Html.fromHtml("<b>Sundaland Flora & Fauna</b>" +  "<br />" + 
@@ -35,6 +42,7 @@ public class FieldGuideTab extends Activity implements OnClickListener {
 		allButton = (Button) findViewById(R.id.allButton);
 		allButton.setOnClickListener(this);
 		allButton.setText(Html.fromHtml("<b>All areas</b>"));
+
     }
 	
 	@Override
@@ -56,17 +64,7 @@ public class FieldGuideTab extends Activity implements OnClickListener {
 		case R.id.allButton:
 //			Launch activity;
 	    	allButton.setText("all");
-	    	break;
+
 		}
 	}
 }
-			
-			
-//			private View.OnClickListener onClick = new View.OnClickListener() {
-//			public void onClick(View v) {
-//		    
-//			switch(v.getId()){  
-//		    case R.id.redPre:
-//			}
-//		};
-	//}
