@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent" android:layout_height="match_parent">
   
-  <Button android:id="@+id/displayBackButton"
+  <ImageView android:src="@drawable/back_bkgd"
   	android:layout_width="match_parent" android:layout_height="wrap_content"
-  	android:layout_alignParentBottom="true" android:paddingRight="700sp"
-  	android:background="#000000" android:textColor="#DDDDDD" 
-  	android:textSize="30sp" android:text="Back" />
-<!--   	sub in the correct png here, then deal with alignment -->
-<!--   <ImageView android:src="@drawable/back_btn_background" -->
-<!--   	android:layout_width="match_parent" android:layout_height="wrap_content" -->
-<!--   	android:layout_alignParentBottom="true" android:layout_alignParentLeft="true" /> -->
-  
+  	android:layout_alignParentBottom="true" android:layout_alignParentLeft="true" />
+  <Button android:id="@+id/displayBackButton" android:background="@drawable/back_btn"
+  	android:layout_width="wrap_content" android:layout_height="wrap_content"
+  	android:layout_alignParentBottom="true" 
+  	android:layout_marginBottom="13sp" android:layout_marginLeft="18sp" />
+  	  
 </RelativeLayout>
