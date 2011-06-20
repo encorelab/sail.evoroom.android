@@ -6,11 +6,15 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 public class FieldGuideActivity extends Activity {
 	
-
+	int flag = 0;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -34,9 +38,9 @@ public class FieldGuideActivity extends Activity {
         	"<small>2 million years ago</small>"));
 		sundalandFloraButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	changeVis(R.id.field_guide_species_selector);
-                //set a flag here? They will get unwieldy pretty quickly.
-                //it will be better to put these 3 lines + flag into another function and call that
+                flag = 1;
+                setupSpeciesSelectorView();
+                changeVis(R.id.field_guide_species_selector);
             }
         });
 		Button sundalandFaunaButton = (Button) findViewById(R.id.sundalandFaunaButton);
@@ -44,6 +48,8 @@ public class FieldGuideActivity extends Activity {
         	"<small>2 million years ago</small>"));
 		sundalandFaunaButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+            	flag = 2;
+                setupSpeciesSelectorView();
             	changeVis(R.id.field_guide_species_selector);
             }
         });
@@ -96,24 +102,50 @@ public class FieldGuideActivity extends Activity {
             public void onClick(View v) {
             	changeVis(R.id.field_guide_area_selector);            }
         });
-		Button forwardButton = (Button) findViewById(R.id.forwardButton);
-		forwardButton.setOnClickListener(new View.OnClickListener() {
+
+        
+		ImageView image = (ImageView) findViewById(R.id.speciesSelector);
+		Button topLeftButton = (Button) findViewById(R.id.topLeftButton);
+		Button topRightButton = (Button) findViewById(R.id.topRightButton);
+		Button f3 = (Button) findViewById(R.id.genericLeftButton);
+		f3.setHeight(291);
+		f3.setWidth(286);
+		Button f4 = (Button) findViewById(R.id.genericRightButton);
+		f4.setHeight(291);
+		f4.setWidth(286);
+
+		RelativeLayout.LayoutParams p1 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+		        ViewGroup.LayoutParams.WRAP_CONTENT);
+		p1.addRule(RelativeLayout.BELOW, R.id.topLeftButton);
+		p1.addRule(RelativeLayout.ALIGN_LEFT, R.id.topLeftButton);
+		f3.setLayoutParams(p1);
+
+		RelativeLayout.LayoutParams p2 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+		        ViewGroup.LayoutParams.WRAP_CONTENT);
+		p2.addRule(RelativeLayout.BELOW, R.id.topRightButton);
+		p2.addRule(RelativeLayout.ALIGN_RIGHT, R.id.topRightButton);
+		f4.setLayoutParams(p2);
+
+		topLeftButton.setVisibility(View.VISIBLE);
+		topLeftButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	changeVis(R.id.field_guide_species_display);
             	}
         });
-		Button forwardButton2 = (Button) findViewById(R.id.forwardButton2);
-		forwardButton2.setOnClickListener(new View.OnClickListener() {
+		topRightButton.setVisibility(View.VISIBLE);
+		topRightButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	changeVis(R.id.field_guide_species_display);
             	}
         });
-		Button forwardButton3 = (Button) findViewById(R.id.forwardButton3);
-		forwardButton3.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            	changeVis(R.id.field_guide_species_display);
-            }
-        });
+		
+		if (flag == 1) {
+	        image.setImageDrawable(getResources().getDrawable(R.drawable.area_box_sundaland_plant));
+		}
+		if (flag == 2) {
+			image.setImageDrawable(getResources().getDrawable(R.drawable.area_box_sundaland_animal));
+		}
+
 	}
     
 	private void setupSpeciesDisplayView() {
@@ -123,6 +155,7 @@ public class FieldGuideActivity extends Activity {
             	changeVis(R.id.field_guide_species_selector);
             }
         });
+        
 	}
 
 	private void changeVis(int vis) {
@@ -130,7 +163,6 @@ public class FieldGuideActivity extends Activity {
     	findViewById(R.id.field_guide_species_selector).setVisibility(View.GONE);
         findViewById(R.id.field_guide_species_display).setVisibility(View.GONE);
         findViewById(vis).setVisibility(View.VISIBLE);
-        //or is it String? Or View?
 	}
 	
 	//maybe also a checkVis()?

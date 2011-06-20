@@ -3,27 +3,65 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent" android:layout_height="match_parent">
 
+
+  <ScrollView android:id="@+id/scrollContainer"
+  	android:layout_width="match_parent" android:layout_height="1200sp" 
+    android:layout_centerHorizontal="true" 
+	android:fillViewport="true" >
+
+<RelativeLayout android:id="@+id/LinearLayout02"
+android:layout_width="wrap_content" android:layout_height="500sp"
+android:orientation="vertical" android:layout_gravity="center_horizontal" >
+
+<!-- this is the generic imageview which gets linked to a /drawable resource in the java code -->
+	<ImageView android:id="@+id/speciesSelector" 
+	 	android:layout_width="wrap_content" android:layout_height="match_parent"
+		 />
+
+<Button android:text="1"
+android:id="@+id/topLeftButton"
+android:layout_width="286sp"
+android:layout_height="286sp"
+android:layout_marginTop="150sp" />
+<Button android:text="2"
+android:id="@+id/topRightButton"
+android:layout_width="286sp"
+android:layout_height="286sp"
+android:layout_marginTop="150sp"
+android:layout_toRightOf="@id/topLeftButton" />
+
+
+<Button android:id="@+id/genericLeftButton" android:text="3"
+android:layout_width="286sp" android:layout_height="289sp"
+/>
+<!-- android:visibility="gone" -->
+<Button android:id="@+id/genericRightButton" android:text="4"
+android:layout_width="286sp" android:layout_height="289sp"
+/>
+
+
+<!-- <Button android:text="3" -->
+<!-- android:id="@+id/f2Button" -->
+<!-- android:layout_width="286sp" -->
+<!-- android:layout_height="289sp" -->
+<!-- android:layout_below="@id/forwardButton" /> -->
+<!-- <Button android:text="4" -->
+<!-- android:id="@+id/f3Button" -->
+<!-- android:layout_width="286sp" -->
+<!-- android:layout_height="289sp" -->
+<!-- android:layout_toRightOf="@id/f2Button" -->
+<!-- android:layout_below="@id/forwardButton" /> -->
+
+</RelativeLayout>
+		
+  </ScrollView>
+
   <ImageView android:src="@drawable/back_bkgd"
   	android:layout_width="match_parent" android:layout_height="wrap_content"
   	android:layout_alignParentBottom="true" android:layout_alignParentLeft="true" />
   <Button android:id="@+id/selectorBackButton" android:background="@drawable/back_btn"
   	android:layout_width="wrap_content" android:layout_height="wrap_content"
-  	android:layout_alignParentBottom="true" 
+  	android:layout_alignParentBottom="true"
   	android:layout_marginBottom="13sp" android:layout_marginLeft="18sp" />
-
-  <Button android:id="@+id/forwardButton"
-  	android:layout_width="wrap_content" android:layout_height="wrap_content"
-	android:layout_alignParentTop="true"
-  	android:text="Forward" />
-
-  <Button android:id="@+id/forwardButton2"
-  	android:layout_width="wrap_content" android:layout_height="wrap_content"
-  	android:layout_below="@id/forwardButton"
-  	android:text="Forward2" />
-
-  <Button android:id="@+id/forwardButton3"
-  	android:layout_width="wrap_content" android:layout_height="wrap_content"
-  	android:layout_below="@id/forwardButton2"
-  	android:text="Forward3" />
   
 </RelativeLayout>
