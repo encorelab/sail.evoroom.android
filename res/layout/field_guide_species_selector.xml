@@ -1,67 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="match_parent" android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent">
 
+	<ScrollView android:id="@+id/scrollContainer"
+		android:layout_width="match_parent" android:layout_height="1200sp"
+		android:layout_centerHorizontal="true" android:fillViewport="true">
 
-  <ScrollView android:id="@+id/scrollContainer"
-  	android:layout_width="match_parent" android:layout_height="1200sp" 
-    android:layout_centerHorizontal="true" 
-	android:fillViewport="true" >
+		<RelativeLayout android:layout_width="wrap_content"
+			android:layout_height="500sp" android:orientation="vertical"
+			android:layout_gravity="center_horizontal">
 
-<RelativeLayout android:id="@+id/LinearLayout02"
-android:layout_width="wrap_content" android:layout_height="500sp"
-android:orientation="vertical" android:layout_gravity="center_horizontal" >
+			<!-- this is the generic imageview which gets linked to a /drawable resource 
+				in the java code -->
+			<ImageView android:id="@+id/speciesSelector"
+				android:layout_width="wrap_content" android:layout_height="match_parent" />
 
-<!-- this is the generic imageview which gets linked to a /drawable resource in the java code -->
-	<ImageView android:id="@+id/speciesSelector" 
-	 	android:layout_width="wrap_content" android:layout_height="match_parent"
-		 />
+			<Button android:id="@+id/f1" android:text="1" android:background="@android:color/transparent"
+				android:layout_width="286sp" android:layout_height="286sp"
+				android:layout_marginTop="150sp" />
+			<Button android:id="@+id/f2" android:text="2"
+				android:layout_width="286sp" android:layout_height="286sp"
+				android:layout_marginTop="150sp" android:layout_toRightOf="@id/f1" />
+			<Button android:id="@+id/f3" android:text="3"
+				android:layout_width="286sp" android:layout_height="293sp"
+				android:layout_below="@id/f1" />
+			<Button android:id="@+id/f4" android:text="4"
+				android:layout_width="286sp" android:layout_height="293sp"
+				android:layout_below="@id/f2" android:layout_toRightOf="@id/f3" />
+			<Button android:id="@+id/f5" android:text="5"
+				android:layout_width="286sp" android:layout_height="293sp"
+				android:layout_below="@id/f3" />
+			<Button android:id="@+id/f6" android:text="6"
+				android:layout_width="286sp" android:layout_height="293sp"
+				android:layout_below="@id/f4" android:layout_toRightOf="@id/f5" />
+			<Button android:id="@+id/f7" android:text="7"
+				android:layout_width="286sp" android:layout_height="293sp"
+				android:layout_below="@id/f5" />
+			<Button android:id="@+id/f8" android:text="8"
+				android:layout_width="286sp" android:layout_height="293sp"
+				android:layout_below="@id/f6" android:layout_toRightOf="@id/f7" />
+			<Button android:id="@+id/f9" android:text="9"
+				android:layout_width="286sp" android:layout_height="293sp"
+				android:layout_below="@id/f7" />
+			<Button android:id="@+id/f10" android:text="10"
+				android:layout_width="286sp" android:layout_height="293sp"
+				android:layout_below="@id/f8" android:layout_toRightOf="@id/f9" />
+			<Button android:id="@+id/f11" android:text="11"
+				android:layout_width="286sp" android:layout_height="293sp"
+				android:layout_below="@id/f9" />
+			<Button android:id="@+id/f12" android:text="12"
+				android:layout_width="286sp" android:layout_height="293sp"
+				android:layout_below="@id/f10" android:layout_toRightOf="@id/f11" />
+			<Button android:id="@+id/f13" android:text="13"
+				android:layout_width="286sp" android:layout_height="293sp"
+				android:layout_below="@id/f11" />
+			<Button android:id="@+id/f14" android:text="14"
+				android:layout_width="286sp" android:layout_height="293sp"
+				android:layout_below="@id/f12" android:layout_toRightOf="@id/f13" />
 
-<Button android:text="1"
-android:id="@+id/topLeftButton"
-android:layout_width="286sp"
-android:layout_height="286sp"
-android:layout_marginTop="150sp" />
-<Button android:text="2"
-android:id="@+id/topRightButton"
-android:layout_width="286sp"
-android:layout_height="286sp"
-android:layout_marginTop="150sp"
-android:layout_toRightOf="@id/topLeftButton" />
+		</RelativeLayout>
+	</ScrollView>
 
+	<ImageView android:src="@drawable/back_bkgd"
+		android:layout_width="match_parent" android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentLeft="true" />
+	<Button android:id="@+id/selectorBackButton" android:background="@drawable/back_btn"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true" android:layout_marginBottom="13sp"
+		android:layout_marginLeft="18sp" />
 
-<Button android:id="@+id/genericLeftButton" android:text="3"
-android:layout_width="286sp" android:layout_height="289sp"
-/>
-<!-- android:visibility="gone" -->
-<Button android:id="@+id/genericRightButton" android:text="4"
-android:layout_width="286sp" android:layout_height="289sp"
-/>
-
-
-<!-- <Button android:text="3" -->
-<!-- android:id="@+id/f2Button" -->
-<!-- android:layout_width="286sp" -->
-<!-- android:layout_height="289sp" -->
-<!-- android:layout_below="@id/forwardButton" /> -->
-<!-- <Button android:text="4" -->
-<!-- android:id="@+id/f3Button" -->
-<!-- android:layout_width="286sp" -->
-<!-- android:layout_height="289sp" -->
-<!-- android:layout_toRightOf="@id/f2Button" -->
-<!-- android:layout_below="@id/forwardButton" /> -->
-
-</RelativeLayout>
-		
-  </ScrollView>
-
-  <ImageView android:src="@drawable/back_bkgd"
-  	android:layout_width="match_parent" android:layout_height="wrap_content"
-  	android:layout_alignParentBottom="true" android:layout_alignParentLeft="true" />
-  <Button android:id="@+id/selectorBackButton" android:background="@drawable/back_btn"
-  	android:layout_width="wrap_content" android:layout_height="wrap_content"
-  	android:layout_alignParentBottom="true"
-  	android:layout_marginBottom="13sp" android:layout_marginLeft="18sp" />
-  
 </RelativeLayout>
