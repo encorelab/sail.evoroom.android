@@ -37,11 +37,18 @@ public class ObservationsActivity extends Activity {
 	}
 	
 	private void setupEntryView() {
-		Spinner colourPicker = (Spinner) findViewById(R.id.colour_picker);
-	    ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-	            this, R.array.colours, android.R.layout.simple_spinner_item);
-	    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-	    colourPicker.setAdapter(adapter);
+		Spinner itemPicker = (Spinner) findViewById(R.id.item_picker);
+	    ArrayAdapter<CharSequence> itemAdapter = ArrayAdapter.createFromResource(
+	            this, R.array.items, android.R.layout.simple_spinner_item);
+	    itemAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+	    itemPicker.setAdapter(itemAdapter);
+	    
+	    // fill the areaPicker spinner with data from the array in selection-lists.xml
+	    Spinner areaPicker = (Spinner) findViewById(R.id.area_picker);
+	    ArrayAdapter<CharSequence> areaAdapter = ArrayAdapter.createFromResource(
+	            this, R.array.areas, android.R.layout.simple_spinner_item);
+	    areaAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+	    areaPicker.setAdapter(areaAdapter);
 	}
 	
 	private void setupCloudView() {

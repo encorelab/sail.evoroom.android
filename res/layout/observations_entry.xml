@@ -4,10 +4,13 @@
 	android:layout_gravity="center" android:orientation="vertical"
 	android:background="#FFFFFF" android:padding="20sp" android:visibility="gone">
 
-	<Spinner android:id="@+id/colour_picker" android:layout_width="wrap_content"
+	<Spinner android:id="@+id/item_picker" android:layout_width="wrap_content"
 		android:layout_height="wrap_content" android:drawSelectorOnTop="true"
 		android:prompt="@string/item_prompt" />
-	<EditText android:hint="Enter your observation here ..."
+	<Spinner android:id="@+id/area_picker" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:drawSelectorOnTop="true"
+		android:prompt="@string/area_prompt" />
+	<EditText android:hint="Write down your observation"
 		android:id="@+id/observation_text" android:layout_width="match_parent"
 		android:layout_height="wrap_content" />
 	<Button android:text="Back Button" android:id="@+id/back_button"
