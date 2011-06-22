@@ -1,13 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="match_parent" android:layout_height="match_parent">
-  
-  <ImageView android:src="@drawable/back_bkgd"
-  	android:layout_width="match_parent" android:layout_height="wrap_content"
-  	android:layout_alignParentBottom="true" android:layout_alignParentLeft="true" />
-  <Button android:id="@+id/displayBackButton" android:background="@drawable/back_btn"
-  	android:layout_width="wrap_content" android:layout_height="wrap_content"
-  	android:layout_alignParentBottom="true" 
-  	android:layout_marginBottom="13sp" android:layout_marginLeft="18sp" />
-  	  
+	android:layout_width="match_parent" android:layout_height="match_parent"
+	android:orientation="vertical" android:background="#F2F2F2">
+
+	<ImageView android:id="@+id/speciesPhoto"
+		android:layout_width="500sp" android:layout_height="300sp"
+		android:layout_centerHorizontal="true" android:layout_marginTop="60sp" />
+
+	<TextView android:id="@+id/commonNameContent"
+		android:layout_width="370sp" android:layout_height="wrap_content"
+		android:layout_marginTop="30sp" 
+		android:layout_toRightOf="@+id/commonNameField" android:layout_below="@id/speciesPhoto"
+		android:textColor="#000000" android:textSize="18sp" />
+	<TextView android:id="@id/commonNameField"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_marginTop="30sp" android:layout_marginLeft="131sp"
+		android:layout_alignBaseline="@id/commonNameContent"
+		android:textColor="#000000" android:textSize="18sp" android:textStyle="bold"
+		android:text="Common Name: " />
+		
+	<TextView android:id="@+id/scientificNameContent"
+		android:layout_width="370sp" android:layout_height="wrap_content"
+		android:layout_toRightOf="@+id/scientificNameField" android:layout_below="@id/commonNameContent"
+		android:textColor="#000000" android:textSize="18sp" />
+	<TextView android:id="@id/scientificNameField"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_alignBaseline="@id/scientificNameContent" android:layout_marginLeft="129sp"
+		android:textColor="#000000" android:textSize="18sp" android:textStyle="bold"
+		android:text="Scientific Name: "/>
+
+	<TextView android:id="@+id/familyContent"
+		android:layout_width="370sp" android:layout_height="wrap_content"
+		android:layout_toRightOf="@+id/familyField" android:layout_below="@id/scientificNameContent"
+		android:textColor="#000000" android:textSize="18sp" />
+	<TextView android:id="@id/familyField"
+		android:layout_width="wrap_content"	android:layout_height="wrap_content"
+		android:layout_alignBaseline="@id/familyContent" android:layout_marginLeft="206sp"
+		android:textColor="#000000" android:textSize="18sp" android:textStyle="bold"
+		android:text="Family: "/>
+
+	<TextView android:id="@+id/descriptionContent"
+		android:layout_width="370sp" android:layout_height="wrap_content"
+		android:layout_toRightOf="@+id/descriptionField" android:layout_below="@id/familyContent" 
+		android:textColor="#000000" android:textSize="18sp" />
+	<TextView android:id="@id/descriptionField"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_alignBaseline="@id/descriptionContent" android:layout_marginLeft="164sp"
+		android:textColor="#000000" android:textSize="18sp" android:textStyle="bold"
+		android:text="Description: "/>
+
+	<TextView android:id="@+id/habitatContent"
+		android:layout_width="370sp" android:layout_height="wrap_content"
+		android:layout_toRightOf="@+id/habitatField" android:layout_below="@id/descriptionContent"
+		android:textColor="#000000" android:textSize="18sp" />
+	<TextView android:id="@id/habitatField"
+		android:layout_width="wrap_content"	android:layout_height="wrap_content"
+		android:layout_alignBaseline="@id/habitatContent" android:layout_marginLeft="200sp"
+		android:textColor="#000000" android:textSize="18sp" android:textStyle="bold"
+		android:text="Habitat: "/>
+		
+	<TextView android:id="@+id/prevelenceContent"
+		android:layout_width="370sp" android:layout_height="wrap_content"
+		android:layout_toRightOf="@+id/prevelenceField" android:layout_below="@id/habitatContent"
+		android:textColor="#000000" android:textSize="18sp" />
+	<TextView android:id="@id/prevelenceField"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_alignBaseline="@id/prevelenceContent" android:layout_marginLeft="170sp"
+		android:textColor="#000000" android:textSize="18sp" android:textStyle="bold"
+		android:text="Prevelence: "/>
+
+	<ImageView android:id="@+id/speciesPicture"
+		android:layout_width="match_parent" android:layout_height="wrap_content"
+		android:layout_below="@id/prevelenceField" />
+
+	<ImageView android:src="@drawable/back_bkgd"
+		android:layout_width="match_parent" android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentLeft="true" />
+	<Button android:id="@+id/displayBackButton" android:background="@drawable/back_btn"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true" android:layout_marginBottom="13sp"
+		android:layout_marginLeft="18sp" />
 </RelativeLayout>

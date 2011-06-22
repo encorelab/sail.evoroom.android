@@ -12,13 +12,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class FieldGuideActivity extends Activity {
 	
 // flag to mark button selected in field_guide_area_selector
 	int areaSelectorFlag = 0;
 // flag to mark the selected flora or fauna in field_guide_species_selector
-	String speciesSelected = null;
+	String speciesSelected = "";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -101,9 +102,8 @@ public class FieldGuideActivity extends Activity {
             	changeVis(R.id.field_guide_species_selector);
             	}
         });
-
-		
 	}
+
 	
 	private void setupSpeciesSelectorView() {
 		Button backButton = (Button) findViewById(R.id.selectorBackButton);
@@ -324,7 +324,8 @@ public class FieldGuideActivity extends Activity {
 			f6.setVisibility(View.VISIBLE);
 			f1.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
-	            	speciesSelected = "";
+	            	speciesSelected = "striped_rabbit";
+	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
@@ -371,7 +372,35 @@ public class FieldGuideActivity extends Activity {
             	changeVis(R.id.field_guide_species_selector);
             }
         });
-        
+
+		ImageView image = (ImageView) findViewById(R.id.speciesPhoto);
+		TextView commonName, scientificName, family, description, habitat, prevelence;
+		TextView commonNameContent, scientificNameContent, familyContent, descriptionContent, habitatContent, prevelenceContent; 
+		commonName = (TextView) findViewById(R.id.commonNameField);
+		commonNameContent = (TextView) findViewById(R.id.commonNameContent);
+		scientificName = (TextView) findViewById(R.id.scientificNameField);
+		scientificNameContent = (TextView) findViewById(R.id.scientificNameContent);
+		family = (TextView) findViewById(R.id.familyField);
+		familyContent = (TextView) findViewById(R.id.familyContent);
+		description = (TextView) findViewById(R.id.descriptionField);
+		descriptionContent = (TextView) findViewById(R.id.descriptionContent);
+		habitat = (TextView) findViewById(R.id.habitatField);
+		habitatContent = (TextView) findViewById(R.id.habitatContent);
+		prevelence = (TextView) findViewById(R.id.prevelenceField);
+		prevelenceContent = (TextView) findViewById(R.id.prevelenceContent);
+		
+		if (speciesSelected.equals("striped_rabbit")) {
+			image.setImageDrawable(getResources().getDrawable(R.drawable.striped_rabbit));
+			commonNameContent.setText("Sumatra short-eared rabbit");
+			scientificNameContent.setText("Nesolagus netscheri");
+			familyContent.setText("Leporidae");
+			descriptionContent.setText("The Sumatran Striped Rabbit is usually about 40 cm (1 ft, 4 in) long. It is gray with brown stripes, with a red tail and rump, and the underside is white. It lives in forests at altitudes of 600-1400 metres. It is nocturnal, resting in the burrows of other animals. It usually eats the stalk and leaves of understory plants, but captive rabbits ate grain, and tropical fruits");
+			habitatContent.setText("Exists in forests along the mountainous edge of Sumatra");
+			prevelenceContent.setText("Critically endangered because of loss of habitat");
+//			image.setImageDrawable(getResources().getDrawable(R.drawable.cartoon_striped_rabbit));
+		}
+
+		
 	}
 
 	private void changeVis(int vis) {
