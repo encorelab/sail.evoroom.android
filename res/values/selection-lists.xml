@@ -2,12 +2,15 @@
 <resources>
 	<string name="item_prompt">Choose an item</string>
 	<string-array name="items">
-        <item>Item 1</item>
-        <item>Item 2</item>
-        <item>Item 3</item>
-        <item>Item 4</item>
-        <item>Item 5</item>
-        <item>Item 6</item>
+        <item>Clouded Leopard</item>
+		<item>Fig wasp</item>
+		<item>Hornbill</item>
+		<item>Monkey</item>
+		<item>Orangutan</item>
+		<item>Rabbit</item>
+		<item>Rhinoceros</item>
+		<item>Tapir</item>
+		<item>Tiger</item>
     </string-array>
     
     <string name="area_prompt">Choose an area</string>
