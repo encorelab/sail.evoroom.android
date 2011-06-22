@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="item_prompt">Choose a item ...</string>
-	<string-array name="colours">
-        <item>red</item>
-        <item>orange</item>
-        <item>yellow</item>
-        <item>green</item>
-        <item>blue</item>
-        <item>purple</item>
-        <item>brown</item>
-        <item>gray</item>
-        <item>pink</item>
+	<string name="item_prompt">Choose an item</string>
+	<string-array name="items">
+        <item>Item 1</item>
+        <item>Item 2</item>
+        <item>Item 3</item>
+        <item>Item 4</item>
+        <item>Item 5</item>
+        <item>Item 6</item>
     </string-array>
     
+    <string name="area_prompt">Choose an area</string>
     <string-array name="areas">
         <item>Borneo</item>
         <item>Sumatra</item>
