@@ -3,10 +3,26 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent">
   
+	<ImageButton android:id="@+id/all_filter_button" android:background="@drawable/all_filter_up_btn"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
+		android:layout_marginTop="25sp" android:layout_marginLeft="30sp" />
+	<ImageButton android:id="@+id/sundaland_filter_button" android:background="@drawable/sud_filter_up_btn"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_alignParentTop="true" android:layout_toRightOf="@id/all_filter_button"
+		android:layout_marginTop="25sp" android:layout_marginLeft="30sp" />
+	<ImageButton android:id="@+id/borneo_filter_button" android:background="@drawable/bor_filter_up_btn"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_alignParentTop="true" android:layout_toRightOf="@id/sundaland_filter_button"
+		android:layout_marginTop="25sp" android:layout_marginLeft="30sp" />
+	<ImageButton android:id="@+id/sumatra_filter_button" android:background="@drawable/sum_filter_up_btn"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_alignParentTop="true" android:layout_toRightOf="@id/borneo_filter_button"
+		android:layout_marginTop="25sp" android:layout_marginLeft="30sp" />
+  
   	<ImageView android:src="@drawable/back_bkgd"
 		android:layout_width="match_parent" android:layout_height="wrap_content"
-		android:layout_alignParentBottom="true"
-		android:layout_alignParentLeft="true" />
+		android:layout_alignParentBottom="true"	android:layout_alignParentLeft="true" />
 	<Button android:id="@+id/list_back_button" android:background="@drawable/back_btn"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
 		android:layout_alignParentBottom="true" android:layout_marginBottom="13sp"

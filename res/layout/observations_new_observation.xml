@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="match_parent" android:layout_height="match_parent"
-	android:layout_gravity="center" android:orientation="vertical"
-	android:background="#FFFFFF" android:padding="20sp" android:visibility="gone">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent" >
 
-	<Spinner android:id="@+id/item_picker" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:drawSelectorOnTop="true"
-		android:prompt="@string/item_prompt" />
-	<Spinner android:id="@+id/area_picker" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:drawSelectorOnTop="true"
-		android:prompt="@string/area_prompt" />
-	<EditText android:hint="Write down your observation"
-		android:id="@+id/observation_text" android:layout_width="match_parent"
-		android:layout_height="wrap_content" />
-	<Button android:text="Back Button" android:id="@+id/new_obs_back_button"
-		android:layout_width="wrap_content" android:layout_height="wrap_content" />
-	<Button android:text="Submit" android:id="@+id/new_obs_submit_button"
-		android:layout_width="wrap_content" android:layout_height="wrap_content" />
+	<Spinner android:id="@+id/item_picker"
+		android:layout_width="500sp" android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true" android:layout_marginTop="40sp"
+		android:drawSelectorOnTop="true" android:prompt="@string/item_prompt" />
+	<Spinner android:id="@+id/area_picker" 
+		android:layout_width="500sp" android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true" android:layout_below="@id/item_picker"
+		android:layout_marginTop="40sp"
+		android:drawSelectorOnTop="true" android:prompt="@string/area_prompt" />
+	<EditText android:id="@+id/observation_text" android:hint="Write down your observation"
+		android:layout_width="500sp" android:layout_height="500sp"
+		android:layout_centerHorizontal="true" android:layout_below="@id/area_picker"
+		android:layout_marginTop="40sp" android:gravity="top"
+		android:background="#000000"
+		android:textSize="25sp" android:textColor="#F2F2F2" />
+	<Button android:id="@+id/new_obs_cancel_button" android:background="@drawable/cancel_btn"		
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true" android:layout_marginBottom="40sp"
+		android:layout_alignParentLeft="true" android:layout_marginLeft="100sp" />
+	<Button android:id="@+id/new_obs_submit_button"	android:background="@drawable/submit_btn"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true" android:layout_marginBottom="40sp"
+		android:layout_alignParentRight="true" android:layout_marginRight="100sp"/>
 
-</LinearLayout>
+</RelativeLayout>

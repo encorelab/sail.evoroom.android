@@ -36,16 +36,42 @@ public class ObservationsActivity extends Activity {
 	}
 
 	private void setupListView() {
+		Button allFilterButton = (Button) findViewById(R.id.all_filter_button);
+		Button sundalandFilterButton = (Button) findViewById(R.id.sundaland_filter_button);
+		Button borneoFilterButton = (Button) findViewById(R.id.borneo_filter_button);
+		Button sumatraFilterButton = (Button) findViewById(R.id.sumatra_filter_button);
 		Button backButton = (Button) findViewById(R.id.list_back_button);
+		
+		allFilterButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	//do something
+            }
+        });
+		sundalandFilterButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	//do something
+            	}
+        });
+		borneoFilterButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	//do something
+            	}
+        });
+		sumatraFilterButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	//do something
+            	}
+        });
 		backButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	changeVis(R.id.observations_cloud_view);
             	}
         });
+		
 	}
 
 	private void setupNewObservationView() {
-		Button newObsBackButton = (Button) findViewById(R.id.new_obs_back_button);
+		Button newObsBackButton = (Button) findViewById(R.id.new_obs_cancel_button);
 		newObsBackButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	changeVis(R.id.observations_cloud_view);
@@ -80,6 +106,8 @@ public class ObservationsActivity extends Activity {
             	changeVis(R.id.observations_cloud_view);
             	}
         });
+		
+		
 	}
 	
 	private void changeVis(int vis) {
