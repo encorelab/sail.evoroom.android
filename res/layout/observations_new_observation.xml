@@ -13,7 +13,9 @@
 	<EditText android:hint="Write down your observation"
 		android:id="@+id/observation_text" android:layout_width="match_parent"
 		android:layout_height="wrap_content" />
-	<Button android:text="Back Button" android:id="@+id/back_button"
+	<Button android:text="Back Button" android:id="@+id/new_obs_back_button"
+		android:layout_width="wrap_content" android:layout_height="wrap_content" />
+	<Button android:text="Submit" android:id="@+id/new_obs_submit_button"
 		android:layout_width="wrap_content" android:layout_height="wrap_content" />
 
 </LinearLayout>

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="match_parent" android:layout_height="match_parent"
-	android:layout_gravity="center" android:orientation="vertical"
-	android:background="#FFFFFF" android:padding="20sp" android:visibility="gone">
-	
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Observation cloud oooooh" android:id="@+id/foo"></TextView>
+	android:layout_width="match_parent" android:layout_height="match_parent" >
+<!-- 	android:layout_gravity="center" android:orientation="vertical" -->
+<!-- 	android:background="#FFFFFF" android:padding="20sp" android:visibility="gone" -->
 
-	
+	<Button android:layout_width="wrap_content" android:text="View all" android:layout_height="wrap_content" android:id="@+id/view_observations_button"></Button>
+    <Button android:layout_width="wrap_content" android:text="Add an observation" android:layout_height="wrap_content" android:id="@+id/add_observation_button"></Button>
 
 </LinearLayout>

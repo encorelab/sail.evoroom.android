@@ -4,10 +4,11 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent" android:orientation="vertical">
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/observation_mode_selector">
-        <Button android:layout_width="wrap_content" android:text="Entry" android:layout_height="wrap_content" android:id="@+id/button_to_entry"></Button>
-        <Button android:layout_width="wrap_content" android:text="Cloud" android:layout_height="wrap_content" android:id="@+id/button_to_cloud"></Button>
     </LinearLayout>
 
-	<include android:id="@+id/observations_entry_view" layout="@layout/observations_entry" />
 	<include android:id="@+id/observations_cloud_view" layout="@layout/observations_cloud" />
+	<include android:id="@+id/observations_new_observation_view" layout="@layout/observations_new_observation" />
+	<include android:id="@+id/observations_list_view" layout="@layout/observations_list" />
+	<include android:id="@+id/observations_details_view" layout="@layout/observations_details" />
+	
 </LinearLayout>
