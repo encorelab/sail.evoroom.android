@@ -2,16 +2,12 @@
 
 package org.encorelab.sail.evoroom;
 
-import android.R.layout;
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class FieldGuideActivity extends Activity {
@@ -380,21 +376,13 @@ public class FieldGuideActivity extends Activity {
 
 		ImageView speciesPhoto = (ImageView) findViewById(R.id.speciesPhoto);
 		ImageView speciesDrawn = (ImageView) findViewById(R.id.speciesDrawn);
-		TextView commonName, scientificName, family, description, habitat, prevalence, interesting, sources;
-		TextView commonNameContent, scientificNameContent, familyContent, descriptionContent, habitatContent, prevalenceContent, interestingContent, sourcesContent; 
-		scientificName = (TextView) findViewById(R.id.scientificNameField);
+		TextView scientificNameContent, familyContent, descriptionContent, habitatContent, prevalenceContent, interestingContent, sourcesContent; 
 		scientificNameContent = (TextView) findViewById(R.id.scientificNameContent);
-		family = (TextView) findViewById(R.id.familyField);
 		familyContent = (TextView) findViewById(R.id.familyContent);
-		description = (TextView) findViewById(R.id.descriptionField);
 		descriptionContent = (TextView) findViewById(R.id.descriptionContent);
-		habitat = (TextView) findViewById(R.id.habitatField);
 		habitatContent = (TextView) findViewById(R.id.habitatContent);
-		prevalence = (TextView) findViewById(R.id.prevalenceField);
 		prevalenceContent = (TextView) findViewById(R.id.prevalenceContent);
-		interesting = (TextView) findViewById(R.id.interestingField);
 		interestingContent = (TextView) findViewById(R.id.interestingContent);
-		sources = (TextView) findViewById(R.id.sourcesField);
 		sourcesContent = (TextView) findViewById(R.id.sourcesContent);
 
 		scientificNameContent.setText(" ");
@@ -567,9 +555,6 @@ public class FieldGuideActivity extends Activity {
 			sourcesContent.setText("");
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
-
-
-		
 
 
 	}

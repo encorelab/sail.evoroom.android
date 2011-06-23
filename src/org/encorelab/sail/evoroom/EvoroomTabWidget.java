@@ -43,6 +43,6 @@ public class EvoroomTabWidget extends TabActivity {
 		
 		tabHost.setBackgroundResource(R.drawable.background);
 		
-		tabHost.setCurrentTab(1);
+		tabHost.setCurrentTab(0);
 	}
 }

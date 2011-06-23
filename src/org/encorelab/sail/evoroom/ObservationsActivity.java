@@ -13,30 +13,52 @@ public class ObservationsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.observations);
         
-        setupModeButtons();
-        setupEntryView();
         setupCloudView();
+        setupNewObservationView();
+        setupListView();
+        setupDetailsView();
     }
-	
-	private void setupModeButtons() {
-		Button button_to_entry = (Button) findViewById(R.id.button_to_entry);
-        button_to_entry.setOnClickListener(new View.OnClickListener() {
+
+	private void setupCloudView() {
+		Button viewObservationsButton = (Button) findViewById(R.id.view_observations_button);
+		Button addObservationButton = (Button) findViewById(R.id.add_observation_button);
+        viewObservationsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                findViewById(R.id.observations_entry_view).setVisibility(View.VISIBLE);
-                findViewById(R.id.observations_cloud_view).setVisibility(View.GONE);
+            	changeVis(R.id.observations_list_view);
             }
         });
-        
-        Button button_to_cloud = (Button) findViewById(R.id.button_to_cloud);
-        button_to_cloud.setOnClickListener(new View.OnClickListener() {
+        addObservationButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	findViewById(R.id.observations_entry_view).setVisibility(View.GONE);
-                findViewById(R.id.observations_cloud_view).setVisibility(View.VISIBLE);
+            	changeVis(R.id.observations_new_observation_view);
             }
+        });
+		
+	}
+
+	private void setupListView() {
+		Button backButton = (Button) findViewById(R.id.list_back_button);
+		backButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	changeVis(R.id.observations_cloud_view);
+            	}
         });
 	}
-	
-	private void setupEntryView() {
+
+	private void setupNewObservationView() {
+		Button newObsBackButton = (Button) findViewById(R.id.new_obs_back_button);
+		newObsBackButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	changeVis(R.id.observations_cloud_view);
+            	}
+        });
+
+		Button newObsSubmitButton = (Button) findViewById(R.id.new_obs_submit_button);
+		newObsSubmitButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	changeVis(R.id.observations_details_view);
+            	}
+        });
+
 		Spinner itemPicker = (Spinner) findViewById(R.id.item_picker);
 	    ArrayAdapter<CharSequence> itemAdapter = ArrayAdapter.createFromResource(
 	            this, R.array.items, android.R.layout.simple_spinner_item);
@@ -50,7 +72,21 @@ public class ObservationsActivity extends Activity {
 	    areaAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 	    areaPicker.setAdapter(areaAdapter);
 	}
+
+	private void setupDetailsView() {
+		Button detailsBackButton = (Button) findViewById(R.id.details_back_button);
+		detailsBackButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	changeVis(R.id.observations_cloud_view);
+            	}
+        });
+	}
 	
-	private void setupCloudView() {
+	private void changeVis(int vis) {
+        findViewById(R.id.observations_cloud_view).setVisibility(View.GONE);
+    	findViewById(R.id.observations_new_observation_view).setVisibility(View.GONE);
+        findViewById(R.id.observations_list_view).setVisibility(View.GONE);
+        findViewById(R.id.observations_details_view).setVisibility(View.GONE);
+        findViewById(vis).setVisibility(View.VISIBLE);
 	}
 }
