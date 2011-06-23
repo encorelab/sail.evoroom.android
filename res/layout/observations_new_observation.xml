@@ -15,8 +15,8 @@
 		android:layout_width="500sp" android:layout_height="500sp"
 		android:layout_centerHorizontal="true" android:layout_below="@id/area_picker"
 		android:layout_marginTop="40sp" android:gravity="top"
-		android:background="#000000"
-		android:textSize="25sp" android:textColor="#F2F2F2" />
+		android:textSize="25sp"		 
+    	android:background="#000000" android:textColor="#F2F2F2" />
 	<Button android:id="@+id/new_obs_cancel_button" android:background="@drawable/cancel_btn"		
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
 		android:layout_alignParentBottom="true" android:layout_marginBottom="40sp"
