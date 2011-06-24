@@ -5,9 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class ObservationsActivity extends Activity {
+	
+	TextView newObsItemContent = null;
 	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,17 +75,24 @@ public class ObservationsActivity extends Activity {
 	}
 
 	private void setupNewObservationView() {
+
+		newObsItemContent = (TextView) findViewById(R.id.observation_text);
 		Button newObsBackButton = (Button) findViewById(R.id.new_obs_cancel_button);
+		Button newObsSubmitButton = (Button) findViewById(R.id.new_obs_submit_button);
+		
+		
 		newObsBackButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+            	newObsItemContent.setText("");
             	changeVis(R.id.observations_cloud_view);
             	}
         });
-
-		Button newObsSubmitButton = (Button) findViewById(R.id.new_obs_submit_button);
 		newObsSubmitButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+            	//create Observation object, insert details from newObsItemContent, spinners and tags
+            	newObsItemContent.setText("");
             	changeVis(R.id.observations_details_view);
+            	
             	}
         });
 
@@ -97,8 +108,10 @@ public class ObservationsActivity extends Activity {
 	            this, R.array.areas, android.R.layout.simple_spinner_item);
 	    areaAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 	    areaPicker.setAdapter(areaAdapter);
+	   
 	}
 
+	
 	private void setupDetailsView() {
 		Button detailsBackButton = (Button) findViewById(R.id.details_back_button);
 		detailsBackButton.setOnClickListener(new View.OnClickListener() {
@@ -106,7 +119,24 @@ public class ObservationsActivity extends Activity {
             	changeVis(R.id.observations_cloud_view);
             	}
         });
-		
+
+		//Observation obs = GET THE SELECTED OBSERVATION FROM THE DB
+		ImageView detailsAreaImage = (ImageView) findViewById(R.id.details_selected_item_area);
+		TextView detailsTitle = (TextView) findViewById(R.id.details_selected_item_text);
+		TextView detailsContent = (TextView) findViewById(R.id.details_selected_item_content);
+		//TextView detailsTags = (TextView) findViewById(R.id.details_selected_item_tags);
+
+//		if (obs.getArea() == "Sundaland") {
+//			detailsAreaImage.setImageDrawable(getResources().getDrawable(R.drawable.sud_tag));
+//		}
+//		else if (obs.getArea() == "Borneo") {
+//			detailsAreaImage.setImageDrawable(getResources().getDrawable(R.drawable.bor_tag));
+//		}
+//		else {
+//			detailsAreaImage.setImageDrawable(getResources().getDrawable(R.drawable.sum_tag));
+//		}
+//		detailsTitle.setText(obs.getItem());
+//		detailsContent.setText(obs.getText());
 		
 	}
 	
