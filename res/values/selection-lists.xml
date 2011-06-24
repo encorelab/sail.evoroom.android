@@ -15,8 +15,8 @@
     
     <string name="area_prompt">Choose an area</string>
     <string-array name="areas">
+        <item>Sundaland</item>
         <item>Borneo</item>
         <item>Sumatra</item>
-        <item>Sundaland</item>
     </string-array>
 </resources>
