@@ -13,13 +13,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 	Spinner itemPicker = null;
 	Spinner areaPicker = null;
 	private EditText observationText = null;
+	
+	TextView newObsItemContent = null;
 	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,34 +87,29 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 	}
 
 	private void setupNewObservationView() {
-		Button newObsBackButton = (Button) findViewById(R.id.new_obs_cancel_button);
-		newObsBackButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            	changeVis(R.id.observations_cloud_view);
-            	}
-        });
 
+		newObsItemContent = (TextView) findViewById(R.id.observation_text);
+		Button newObsBackButton = (Button) findViewById(R.id.new_obs_cancel_button);
+		Button newObsSubmitButton = (Button) findViewById(R.id.new_obs_submit_button);
 		itemPicker = (Spinner) findViewById(R.id.item_picker);
+		areaPicker = (Spinner) findViewById(R.id.area_picker);
+		observationText = (EditText) findViewById(R.id.observation_text);
+		
 	    ArrayAdapter<CharSequence> itemAdapter = ArrayAdapter.createFromResource(
 	            this, R.array.items, android.R.layout.simple_spinner_item);
 	    itemAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 	    itemPicker.setAdapter(itemAdapter);
-	    
 	    // fill the areaPicker spinner with data from the array in selection-lists.xml
-	    areaPicker = (Spinner) findViewById(R.id.area_picker);
 	    ArrayAdapter<CharSequence> areaAdapter = ArrayAdapter.createFromResource(
 	            this, R.array.areas, android.R.layout.simple_spinner_item);
 	    areaAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 	    areaPicker.setAdapter(areaAdapter);
 	    
-	    observationText = (EditText) findViewById(R.id.observation_text);
-	    
-	    Button newObsSubmitButton = (Button) findViewById(R.id.new_obs_submit_button);
 		newObsSubmitButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	Observation obs = new Observation();
             	String itemText = (String) itemPicker.getSelectedItem();
-            	String areaText = (String)areaPicker.getSelectedItem();
+            	String areaText = (String) areaPicker.getSelectedItem();
             	String obsText = observationText.getText().toString();
             	obs.setObservationData(itemText, areaText, obsText);
             	Dao<Observation, Integer> observationDao = getHelper().getObservationDao();
@@ -119,14 +118,21 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
-				// close the database connection
-				//getHelper().close();
-            	
+
+            	newObsItemContent.setText("");
             	changeVis(R.id.observations_details_view);
             	}
         });
+		
+		newObsBackButton.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+            	newObsItemContent.setText("");
+            	changeVis(R.id.observations_details_view);
+			}
+		});
 	}
 
+	
 	private void setupDetailsView() {
 		Button detailsBackButton = (Button) findViewById(R.id.details_back_button);
 		detailsBackButton.setOnClickListener(new View.OnClickListener() {
@@ -134,7 +140,24 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
             	changeVis(R.id.observations_cloud_view);
             	}
         });
-		
+
+		//Observation obs = GET THE SELECTED OBSERVATION FROM THE DB
+		ImageView detailsAreaImage = (ImageView) findViewById(R.id.details_selected_item_area);
+		TextView detailsTitle = (TextView) findViewById(R.id.details_selected_item_text);
+		TextView detailsContent = (TextView) findViewById(R.id.details_selected_item_content);
+		//TextView detailsTags = (TextView) findViewById(R.id.details_selected_item_tags);
+
+//		if (obs.getArea() == "Sundaland") {
+//			detailsAreaImage.setImageDrawable(getResources().getDrawable(R.drawable.sud_tag));
+//		}
+//		else if (obs.getArea() == "Borneo") {
+//			detailsAreaImage.setImageDrawable(getResources().getDrawable(R.drawable.bor_tag));
+//		}
+//		else {
+//			detailsAreaImage.setImageDrawable(getResources().getDrawable(R.drawable.sum_tag));
+//		}
+//		detailsTitle.setText(obs.getItem());
+//		detailsContent.setText(obs.getText());
 		
 	}
 	
