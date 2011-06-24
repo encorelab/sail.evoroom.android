@@ -120,7 +120,7 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 					e.printStackTrace();
 				}
 				// close the database connection
-				getHelper().close();
+				//getHelper().close();
             	
             	changeVis(R.id.observations_details_view);
             	}

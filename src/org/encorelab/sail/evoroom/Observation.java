@@ -24,6 +24,19 @@ public class Observation {
 		setArea(observationArea);
 		setText(observationText);
 	}
+	
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(getId());
+		sb.append(", ");
+		sb.append(getItem());
+		sb.append(", ");
+		sb.append(getArea());
+		sb.append(", ");
+		sb.append(getText());
+		
+		return sb.toString();
+	}
 
 	public int getId() {
 		return id;
