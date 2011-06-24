@@ -376,21 +376,21 @@ public class FieldGuideActivity extends Activity {
 
 		ImageView speciesPhoto = (ImageView) findViewById(R.id.speciesPhoto);
 		ImageView speciesDrawn = (ImageView) findViewById(R.id.speciesDrawn);
-		TextView scientificNameContent, familyContent, descriptionContent, habitatContent, prevalenceContent, interestingContent, sourcesContent; 
+		TextView commonNameContent, scientificNameContent, familyContent, descriptionContent, habitatContent, prevalenceContent, sourcesContent; 
+		commonNameContent = (TextView) findViewById(R.id.commonNameContent);
 		scientificNameContent = (TextView) findViewById(R.id.scientificNameContent);
 		familyContent = (TextView) findViewById(R.id.familyContent);
 		descriptionContent = (TextView) findViewById(R.id.descriptionContent);
 		habitatContent = (TextView) findViewById(R.id.habitatContent);
 		prevalenceContent = (TextView) findViewById(R.id.prevalenceContent);
-		interestingContent = (TextView) findViewById(R.id.interestingContent);
 		sourcesContent = (TextView) findViewById(R.id.sourcesContent);
 
+		commonNameContent.setText(" ");
 		scientificNameContent.setText(" ");
 		familyContent.setText(" ");
 		descriptionContent.setText(" ");
 		habitatContent.setText(" ");
 		prevalenceContent.setText(" ");
-		interestingContent.setText(" ");
 		sourcesContent.setText(" ");
 		
 		if (speciesSelected.equals("rafflesia_arnoldii")) {
@@ -420,6 +420,7 @@ public class FieldGuideActivity extends Activity {
 		
 		if (speciesSelected.equals("striped_rabbit")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.striped_rabbit));
+			commonNameContent.setText("Sumatran Striped Rabbit");
 			scientificNameContent.setText("Nesolagus netscheri");
 			familyContent.setText("Leporidae");
 			descriptionContent.setText("The Sumatran Striped Rabbit is usually about 40 cm (1 ft, 4 in) long. It is gray with brown stripes, with a red tail and rump, and the underside is white. It lives in forests at altitudes of 600-1400 metres. It is nocturnal, resting in the burrows of other animals. It usually eats the stalk and leaves of understory plants, but captive rabbits ate grain and tropical fruits.");
@@ -473,7 +474,6 @@ public class FieldGuideActivity extends Activity {
 			descriptionContent.setText("The Sumatran rhino lives an estimated 30-45 years in the wild. They are solitary creatures except when pairing prior to mating and during child rearing. They are most active when eating at dawn or just after dusk, loves to wallow in mud baths to cool down and rest. In rainy seasons, the rhinos will move to higher elevations and in cooler months in the lower areas. The Sumatran Rhinos are fast and agile; they climb mountains easily and comfortably traverses steep slopes and riverbanks.");
 			habitatContent.setText("Sumatran Rhinos live in both lowland and highland secondary rainforest, swamps and the cloud forest. They prefer hilly areas close to water, particularly steep upper valleys with a lot of undergrowth. Known to be in Sumatra, Sabah and Borneo (used to live more places; only six known communities contain Sumatran Rhinos)");
 			prevalenceContent.setText("Fewer than 275 individuals remain; critically endangered primarily due to illegal poaching; rhino horns used in amulets and protection; rhino horn now seen as aphrodisiac (traditional Chinese medicine never used it for this purpose); Also hardwood from the rainforest causing rhino habitat depletion.");
-			interestingContent.setText("The most vocal of rhinoceros species; unknown purpose of vocalization (whistle blow)");
 			sourcesContent.setText("Wikipedia");
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
