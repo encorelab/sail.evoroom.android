@@ -118,8 +118,6 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
-				// close the database connection
-				getHelper().close();
 
             	newObsItemContent.setText("");
             	changeVis(R.id.observations_details_view);
