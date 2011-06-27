@@ -153,12 +153,14 @@ public class FieldGuideActivity extends Activity {
 			f1.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
 	            	speciesSelected = "";
+	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
 			f2.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
 	            	speciesSelected = "";
+	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
@@ -173,24 +175,28 @@ public class FieldGuideActivity extends Activity {
 			f1.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
 	            	speciesSelected = "";
+	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
 			f2.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
 	            	speciesSelected = "";
+	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
 			f3.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
 	            	speciesSelected = "";
+	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
 			f4.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
 	            	speciesSelected = "";
+	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
@@ -202,19 +208,22 @@ public class FieldGuideActivity extends Activity {
 			f3.setVisibility(View.VISIBLE);
 			f1.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
-	            	speciesSelected = "";
+	            	speciesSelected = "rafflesia";
+	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
 			f2.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
-	            	speciesSelected = "";
+	            	speciesSelected = "strangler_fig";
+	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
 			f3.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
-	            	speciesSelected = "";
+	            	speciesSelected = "tetrastigma";
+	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
@@ -230,43 +239,50 @@ public class FieldGuideActivity extends Activity {
 			f7.setVisibility(View.VISIBLE);
 			f1.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
-	            	speciesSelected = "";
+	            	speciesSelected = "borneo_orangutan";
+	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
 			f2.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
-	            	speciesSelected = "";
+	            	speciesSelected = "fig_wasp_borneo";
+	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
 			f3.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
-	            	speciesSelected = "";
+	            	speciesSelected = "helmeted_hornbill";
+	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
 			f4.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
-	            	speciesSelected = "";
+	            	speciesSelected = "grey_hornbill";
+	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
 			f5.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
-	            	speciesSelected = "";
+	            	speciesSelected = "proboscis_monkey";
+	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
 			f6.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
-	            	speciesSelected = "";
+	            	speciesSelected = "rhino_hornbill";
+	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
 			f7.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
-	            	speciesSelected = "";
+	            	speciesSelected = "sunda_leopard";
+	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
@@ -281,31 +297,36 @@ public class FieldGuideActivity extends Activity {
 			f5.setVisibility(View.VISIBLE);
 			f1.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
-	            	speciesSelected = "";
+	            	speciesSelected = "ficus_benjamina";
+	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
 			f2.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
-	            	speciesSelected = "";
+	            	speciesSelected = "ficus_microcarpa";
+	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
 			f3.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
-	            	speciesSelected = "";
+	            	speciesSelected = "rafflesia";
+	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
 			f4.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
-	            	speciesSelected = "";
+	            	speciesSelected = "tetrastigma";
+	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
 			f5.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
-	            	speciesSelected = "";
+	            	speciesSelected = "amorphophallus_titanum";
+	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
@@ -318,23 +339,24 @@ public class FieldGuideActivity extends Activity {
 			f4.setVisibility(View.VISIBLE);
 			f5.setVisibility(View.VISIBLE);
 			f6.setVisibility(View.VISIBLE);
+			f7.setVisibility(View.VISIBLE);
 			f1.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
-	            	speciesSelected = "striped_rabbit";
+	            	speciesSelected = "fig_wasp_sumatra";
 	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
 			f2.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
-	            	speciesSelected = "leaf_monkey";
+	            	speciesSelected = "malayan_tapir";
 	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
 			f3.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
-	            	speciesSelected = "malayan_tapir";
+	            	speciesSelected = "leaf_monkey";
 	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
@@ -348,14 +370,21 @@ public class FieldGuideActivity extends Activity {
 	        });
 			f5.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
-	            	speciesSelected = "sunda_leopard";
+	            	speciesSelected = "sumatran_rhino";
 	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
 			f6.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
-	            	speciesSelected = "sumatran_rhino";
+	            	speciesSelected = "striped_rabbit";
+	            	setupSpeciesDisplayView();
+	            	changeVis(R.id.field_guide_species_display);
+	            	}
+	        });
+			f7.setOnClickListener(new View.OnClickListener() {
+	            public void onClick(View v) {
+	            	speciesSelected = "sunda_leopard";
 	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
@@ -393,31 +422,80 @@ public class FieldGuideActivity extends Activity {
 		prevalenceContent.setText(" ");
 		sourcesContent.setText(" ");
 		
-		if (speciesSelected.equals("rafflesia_arnoldii")) {
+		if (speciesSelected.equals("rafflesia")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.rafflesia));
+			commonNameContent.setText("");
+			scientificNameContent.setText("");
+			familyContent.setText("");
+			descriptionContent.setText("");
+			habitatContent.setText("");
+			prevalenceContent.setText("");
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
-		if (speciesSelected.equals("amorphophallus_titanum")) {
+		else if (speciesSelected.equals("amorphophallus_titanum")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.titan_arum));
+			commonNameContent.setText("");
+			scientificNameContent.setText("");
+			familyContent.setText("");
+			descriptionContent.setText("");
+			habitatContent.setText("");
+			prevalenceContent.setText("");
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
-		if (speciesSelected.equals("ficus_elastica")) {
-			
+		else if (speciesSelected.equals("ficus_elastica")) {
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.titan_arum));
+			commonNameContent.setText("");
+			scientificNameContent.setText("");
+			familyContent.setText("");
+			descriptionContent.setText("");
+			habitatContent.setText("");
+			prevalenceContent.setText("");
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
-		if (speciesSelected.equals("ficus_benjamina")) {
+		else if (speciesSelected.equals("ficus_benjamina")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.benjamin_fig));
+			commonNameContent.setText("");
+			scientificNameContent.setText("");
+			familyContent.setText("");
+			descriptionContent.setText("");
+			habitatContent.setText("");
+			prevalenceContent.setText("");
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
-		if (speciesSelected.equals("ficus_microcarpa")) {
+		else if (speciesSelected.equals("ficus_microcarpa")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.curtain_fig));
+			commonNameContent.setText("");
+			scientificNameContent.setText("");
+			familyContent.setText("");
+			descriptionContent.setText("");
+			habitatContent.setText("");
+			prevalenceContent.setText("");
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
-		if (speciesSelected.equals("tetrastigma")) {
+		else if (speciesSelected.equals("tetrastigma")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.tetrastigma));
+			commonNameContent.setText("");
+			scientificNameContent.setText("");
+			familyContent.setText("");
+			descriptionContent.setText("");
+			habitatContent.setText("");
+			prevalenceContent.setText("");
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
-		if (speciesSelected.equals("strangler_fig")) {
+		else if (speciesSelected.equals("strangler_fig")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.strangler_fig));
+			commonNameContent.setText("");
+			scientificNameContent.setText("");
+			familyContent.setText("");
+			descriptionContent.setText("");
+			habitatContent.setText("");
+			prevalenceContent.setText("");
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
 		
-		if (speciesSelected.equals("striped_rabbit")) {
+		else if (speciesSelected.equals("striped_rabbit")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.striped_rabbit));
-			commonNameContent.setText("Sumatran Striped Rabbit");
+			commonNameContent.setText("Sumatran striped rabbit");
 			scientificNameContent.setText("Nesolagus netscheri");
 			familyContent.setText("Leporidae");
 			descriptionContent.setText("The Sumatran Striped Rabbit is usually about 40 cm (1 ft, 4 in) long. It is gray with brown stripes, with a red tail and rump, and the underside is white. It lives in forests at altitudes of 600-1400 metres. It is nocturnal, resting in the burrows of other animals. It usually eats the stalk and leaves of understory plants, but captive rabbits ate grain and tropical fruits.");
@@ -425,9 +503,9 @@ public class FieldGuideActivity extends Activity {
 			prevalenceContent.setText("Critically endangered because of loss of habitat");
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
-		if (speciesSelected.equals("leaf_monkey")) {
+		else if (speciesSelected.equals("leaf_monkey")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.mitered_leaf_monkey));
-			commonNameContent.setText("Sumatran Striped Rabbit");
+			commonNameContent.setText("Mitered leaf monkey");
 			scientificNameContent.setText("Presbytis melalophos");
 			familyContent.setText("Cercopithecidae");
 			descriptionContent.setText("The pollex (thumb) is reduced in this species. The orbits are widely spaced and the hindlimbs are longer as compared to the forelimbs. The average body mass for an adult male mitered leaf-monkey is around 5.9 kilograms, and for the female it is around 5.8 kilograms. This species has a sacculated stomach to assist in the breakdown of cellulose. Infants have a white pelage color with a dark stripe down the back and across the shoulders.");
@@ -436,9 +514,9 @@ public class FieldGuideActivity extends Activity {
 			sourcesContent.setText("Primata");
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
-		if (speciesSelected.equals("malayan_tapir")) {
+		else if (speciesSelected.equals("malayan_tapir")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.tapir));
-			commonNameContent.setText("Sumatran Striped Rabbit");
+			commonNameContent.setText("Malayan tapir");
 			scientificNameContent.setText("Tapirus indicus");
 			familyContent.setText("Tapiridae");
 			descriptionContent.setText(Html.fromHtml("Also known as the Asian Tapir, the Malayan Tapir (Tapirus indicus) is the largest of the four species of tapir and the only one native to Asia. In the Malay language, the tapir is commonly referred to as \"cipan\", \"tenuk\" or \"badak tampong\".<br/>Notable markings: light colored patch which extends from its shoulders to its rear; the rest of its hair is black and tips of ears white; The pattern is for camouflage;<br/>-Grows to 6-8 feet (1.8 to 2.4 m) in length; stand 3-3.5 feet (90 to 107 cm tall); Females are larger than males<br/>-Poor eyesight but excellent sense of smell<br/>-Communicate with high-pitched squeaks and whistles<br/>-Live near water (bathe and swim often)<br/>-Can climb steep slopes<br/>-Active at night, eating soon after sunset or before sunrise"));
@@ -446,9 +524,9 @@ public class FieldGuideActivity extends Activity {
 			prevalenceContent.setText("Deforestation for agricultural purposes, flooding caused by damming of rivers for hydroelectric projects and illegal trade");
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
-		if (speciesSelected.equals("sumatran_orangutan")) {
+		else if (speciesSelected.equals("sumatran_orangutan")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.sumatran_orangutan));
-			commonNameContent.setText("Sumatran Striped Rabbit");
+			commonNameContent.setText("Sumatran orangutan");
 			scientificNameContent.setText("Pongo abelii");
 			familyContent.setText("Hominidae");
 			descriptionContent.setText(Html.fromHtml("One of two species of orangutans - it is rarer and smaller than Bornean orangutan. The Sumatran and Bornean species diverged 400,000 years ago, but the two islands split at least 21,000 years ago.<br/>-Red-orange coat of hair, and white around the mouth<br/>-Grows to height of 1.4 metres (4.6 ft) tall and 90 kilograms (200 lbs) in males; females smaller 90 centimetres (3.0 ft) and 45 kilograms (99 lbs)<br/>-Tends to be more frugivorous (figs and jackfruits) and insectivorous; it will also eat birds' eggs and small vertebrates<br/>-Observed using tools (breaking tree branches and uses them to dig in tree holes for termites or poke bees nest walls for honey, or to eat fruit<br/>-More social than Bornean orangutan"));
@@ -457,9 +535,9 @@ public class FieldGuideActivity extends Activity {
 			sourcesContent.setText("Wikipedia, Nature wildlife, Sumatra Orangutan Chapter 2, Know your Orangutan, Primatology");
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
-		if (speciesSelected.equals("sunda_leopard")) {
+		else if (speciesSelected.equals("sunda_leopard")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.clouded_leopard));
-			commonNameContent.setText("Sumatran Striped Rabbit");
+			commonNameContent.setText("Sunda clouded leopard");
 			scientificNameContent.setText("Neofelis diardi");
 			familyContent.setText("Felidae");
 			descriptionContent.setText("The Sunda Clouded Leopard, also known as the Sundaland Clouded Leopard and the Bornean clouded leopard is a medium-sized wild cat found in Borneo and Sumatra. The Sunda clouded leopard is the largest felid in Borneo, and has a stocky build, weighing around 12 to 25 kg (26 to 55 lb). The canine teeth are two inches long, which, in proportion to the skull length, are longer than those of any other extant feline. Its tail can grow to be as long as its body, aiding balance. Its coat is marked with irregularly-shaped, dark-edged ovals which are said to be shaped like clouds, hence its common name. In 2006, it was classified as a separate species, distinct from its continental relative Neofelis nebulosa.");
@@ -468,9 +546,9 @@ public class FieldGuideActivity extends Activity {
 			sourcesContent.setText("New Species Declared: Clouded Leopard found on Borneo and Sumatra, Wikipedia");
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
-		if (speciesSelected.equals("sumatran_rhino")) {
+		else if (speciesSelected.equals("sumatran_rhino")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.sumatran_rhino));
-			commonNameContent.setText("Sumatran Striped Rabbit");
+			commonNameContent.setText("Sumatran rhinoceros");
 			scientificNameContent.setText("Dicerorhinus sumatrensis");
 			familyContent.setText("Rhinocerotidae");
 			descriptionContent.setText("The Sumatran rhino lives an estimated 30-45 years in the wild. They are solitary creatures except when pairing prior to mating and during child rearing. They are most active when eating at dawn or just after dusk, loves to wallow in mud baths to cool down and rest. In rainy seasons, the rhinos will move to higher elevations and in cooler months in the lower areas. The Sumatran Rhinos are fast and agile; they climb mountains easily and comfortably traverses steep slopes and riverbanks.");
@@ -479,9 +557,9 @@ public class FieldGuideActivity extends Activity {
 			sourcesContent.setText("Wikipedia");
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
-		if (speciesSelected.equals("sumatran_tiger")) {
+		else if (speciesSelected.equals("sumatran_tiger")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.sumatran_tiger));
-			commonNameContent.setText("Sumatran Striped Rabbit");
+			commonNameContent.setText("Sumatran tiger");
 			scientificNameContent.setText("Panthera tigris sumatrae");
 			familyContent.setText("Felidae");
 			descriptionContent.setText(Html.fromHtml("The Sumatran tiger is the smallest of the tiger subspecies. Sumatran male tigers average 8 feet (2.438m) in length and weigh about 265 lbs. (120.2kg), while females average 7 feet (2.134m) in length and weigh about 200 lbs (90.718kg). Their small size helps them move through the jungle, and stripes and patterning is adapted for camouflage in the tall grass and underbush. Males are more bearded and maned (neck and cheek is developed).<br/>-They have webbed toes and are fast swimmers - they run their prey into the water<br/>-White spots on the back of tiger's ears are called \"eye spots\" or \"predator spots\". These spots are believed to function as false eyes as well as to make it look larger to any predator approaching from behind. This is particularly helpful in keeping cubs safe.<br/>-Sumatra provides a varying landscape in which this subspecies lives. From peat-moss forest, submountain and mountain forest as well as lowland forest. As a result, the Sumatran Tiger's coat has evolved slightly different from the other tiger subspecies. This evolution adaptation to their environment give the them the darkest coat of all tigers. The Sumatran Tiger has wide black stripes that are closely spaced, sometimes doubled up on each other. These stripes also run down the animal's forelegs, a distinction setting them apart from the Siberian Tiger.<br/>-They prey on larger ungulates, Wild Boar, Malayan Tapir, deer, smaller animals fowl, monkeys, fish, and mice (when desperate for food)."));
@@ -490,29 +568,29 @@ public class FieldGuideActivity extends Activity {
 			sourcesContent.setText("Wikipedia, Tiger Homes");
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
-		if (speciesSelected.equals("fig_wasp_sumatra")) {
+		else if (speciesSelected.equals("fig_wasp_sumatra")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.fig_wasp2));
-			commonNameContent.setText("Sumatran Striped Rabbit");
+			commonNameContent.setText("Fig wasp");
 			scientificNameContent.setText("Eupristina verticillata");
 			familyContent.setText("Agaonidae");
 			descriptionContent.setText("Also known as the Chinese banyan pollinator wasp, the Eupristina verticillata is a sub species of fig wasps in from the Agaonidae family. They pollinate figs or are otherwise associated with figs in a coevolutional relationship that has been developing for at least 80 million years.");
 			sourcesContent.setText("Bugs in the news, Wikipedia");
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
-		if (speciesSelected.equals("fig_wasp_borneo")) {
+		else if (speciesSelected.equals("fig_wasp_borneo")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.fig_wasp1));
-			commonNameContent.setText("Sumatran Striped Rabbit");
-			scientificNameContent.setText("");
-			familyContent.setText("");
-			descriptionContent.setText("");
-			habitatContent.setText("");
+			commonNameContent.setText("Fig wasp");
+			scientificNameContent.setText("Agaoninae spp.");
+			familyContent.setText("Agaonidae");
+			descriptionContent.setText("Fig wasps are most known for their role in pollinating figs (ficus). Fig wasps and figs have had a co-evolutional relationship developed for at least 80 million years. They fly farther than any other insect. Females have normal wings and males are wingless. The males only role is to mate with the female in the fig and then make a tunnel in the fig for the female to fly out. The life cycle of the fig wasp is closely intertwined with fig tree it inhabits. There are two broad categories for fig wasps based on their relation with fig tree: (a) pollinating wasps that have a symbiotic relationship with tree; or (b) non-pollinating wasps that are parasitic. Both life cycles are similar. Fig wasps larvae develop inside the fig (inflorescence) and when it is time to reproduce, the adult female leave the fig tree. They carry pollen from their natal fig to a another tree.");
+			habitatContent.setText("Tropical and subtropical areas");
 			prevalenceContent.setText("");
-			sourcesContent.setText("");
+			sourcesContent.setText("Figweb, Wikipedia, Figs and Wasps, Fig wasps and their Figs");
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
-		if (speciesSelected.equals("rhino_hornbill")) {
+		else if (speciesSelected.equals("rhino_hornbill")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.rhinoceros_hornbill));
-			commonNameContent.setText("Sumatran Striped Rabbit");
+			commonNameContent.setText("Rhinoceros hornbill");
 			scientificNameContent.setText("");
 			familyContent.setText("");
 			descriptionContent.setText("");
@@ -521,9 +599,9 @@ public class FieldGuideActivity extends Activity {
 			sourcesContent.setText("");
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
-		if (speciesSelected.equals("rhinoplax_vigil")) {
+		else if (speciesSelected.equals("helmeted_hornbill")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.helmeted_hornbill));
-			commonNameContent.setText("Sumatran Striped Rabbit");
+			commonNameContent.setText("Helmeted hornbill");
 			scientificNameContent.setText("");
 			familyContent.setText("");
 			descriptionContent.setText("");
@@ -532,9 +610,9 @@ public class FieldGuideActivity extends Activity {
 			sourcesContent.setText("");
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
-		if (speciesSelected.equals("grey_hornbill")) {
+		else if (speciesSelected.equals("grey_hornbill")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.malabar_grey_hornbill));
-			commonNameContent.setText("Sumatran Striped Rabbit");
+			commonNameContent.setText("Grey hornbill");
 			scientificNameContent.setText("");
 			familyContent.setText("");
 			descriptionContent.setText("");
@@ -543,9 +621,9 @@ public class FieldGuideActivity extends Activity {
 			sourcesContent.setText("");
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
-		if (speciesSelected.equals("proboscis_monkey")) {
+		else if (speciesSelected.equals("proboscis_monkey")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.proboscis_monkey));
-			commonNameContent.setText("");
+			commonNameContent.setText("Proboscis monkey");
 			scientificNameContent.setText("");
 			familyContent.setText("");
 			descriptionContent.setText("");
@@ -554,9 +632,9 @@ public class FieldGuideActivity extends Activity {
 			sourcesContent.setText("");
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
-		if (speciesSelected.equals("borneo_orangutan")) {
+		else if (speciesSelected.equals("borneo_orangutan")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.borneo_orang));
-			commonNameContent.setText("");
+			commonNameContent.setText("Borneo orangutan");
 			scientificNameContent.setText("");
 			familyContent.setText("");
 			descriptionContent.setText("");
@@ -564,6 +642,15 @@ public class FieldGuideActivity extends Activity {
 			prevalenceContent.setText("");
 			sourcesContent.setText("");
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+		}
+		else {
+			commonNameContent.setText("");
+			scientificNameContent.setText("");
+			familyContent.setText("");
+			descriptionContent.setText("");
+			habitatContent.setText("");
+			prevalenceContent.setText("");
+			sourcesContent.setText("");
 		}
 
 	}

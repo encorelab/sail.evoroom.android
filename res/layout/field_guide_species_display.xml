@@ -29,7 +29,7 @@
 			<TextView android:id="@+id/scientificNameContent"
 				android:layout_width="490sp" android:layout_height="wrap_content"
 				android:layout_toRightOf="@+id/scientificNameField" android:layout_below="@id/commonNameContent"
-				android:textColor="#000000" android:textSize="18sp" android:text=" " />
+				android:textColor="#000000" android:textSize="18sp" android:text=" " android:textStyle="italic" />
 			<TextView android:id="@id/scientificNameField"
 				android:layout_width="wrap_content" android:layout_height="wrap_content"
 				android:layout_marginLeft="69sp" 
