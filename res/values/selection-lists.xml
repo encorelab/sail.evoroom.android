@@ -11,6 +11,12 @@
 		<item>Rhinoceros</item>
 		<item>Tapir</item>
 		<item>Tiger</item>
+		<item>Fig/Ficus</item>
+		<item>Grape Vine/Tetrastigma</item>
+		<item>Red Corpse Flower/Rafflesia</item>
+		<item>Tall Corpse Flower/Titan Arum</item>
+		<item>Environment</item>
+		<item>Other</item>
     </string-array>
     
     <string name="area_prompt">Choose an area</string>

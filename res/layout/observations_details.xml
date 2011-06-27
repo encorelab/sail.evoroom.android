@@ -5,7 +5,7 @@
 	<TextView android:id="@+id/details_selected_item_text"
 		android:layout_width="640sp" android:layout_height="120sp"
 		android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
-		android:layout_marginTop="50sp"
+		android:layout_marginTop="50sp" android:padding="35sp"
 		android:background="#000000" android:textSize="30sp" />
 	<ImageView android:id="@+id/details_selected_item_area"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
@@ -17,7 +17,8 @@
 	<TextView android:id="@+id/details_selected_item_content"
 		android:layout_width="640sp" android:layout_height="700sp"
 		android:layout_below="@id/dotted_line1" android:layout_centerHorizontal="true"
-		android:background="#000000" />
+		android:padding="35sp"
+		android:background="#000000" android:textSize="30sp" />
 	<ImageView android:id="@+id/dotted_line2" android:src="@drawable/dotted_line_4in"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
 		android:layout_below="@id/details_selected_item_content" android:layout_centerHorizontal="true" />

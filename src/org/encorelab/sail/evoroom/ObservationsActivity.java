@@ -1,6 +1,8 @@
 package org.encorelab.sail.evoroom;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
@@ -8,33 +10,49 @@ import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
+	//for newObsView
 	Spinner itemPicker = null;
 	Spinner areaPicker = null;
 	private EditText observationText = null;
+
+	Dao<Observation, Integer> observationDao = null;
+	Observation currentObs = null;
 	
-	TextView newObsItemContent = null;
+	List<Observation> obsList = new ArrayList<Observation>();
+	
 	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.observations);
-        
+
+        //maybe do this in oncreate, onresume, etc.
+		Dao<Observation, Integer> observationDao = getHelper().getObservationDao();
+		// page through all of the observations in the database
+		for (Observation obs : observationDao) {
+			obsList.add(obs);
+		}
+
         setupCloudView();
         setupNewObservationView();
         setupListView();
         setupDetailsView();
-    }
+	}
 
+	
 	private void setupCloudView() {
 		Button viewObservationsButton = (Button) findViewById(R.id.view_observations_button);
 		Button addObservationButton = (Button) findViewById(R.id.add_observation_button);
@@ -51,44 +69,11 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 		
 	}
 
-	private void setupListView() {
-//		Button allFilterButton = (Button) findViewById(R.id.all_filter_button);
-//		Button sundalandFilterButton = (Button) findViewById(R.id.sundaland_filter_button);
-//		Button borneoFilterButton = (Button) findViewById(R.id.borneo_filter_button);
-//		Button sumatraFilterButton = (Button) findViewById(R.id.sumatra_filter_button);
-//		Button backButton = (Button) findViewById(R.id.list_back_button);
-//		
-//		allFilterButton.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//            	//do something
-//            }
-//        });
-//		sundalandFilterButton.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//            	//do something
-//            	}
-//        });
-//		borneoFilterButton.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//            	//do something
-//            	}
-//        });
-//		sumatraFilterButton.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//            	//do something
-//            	}
-//        });
-//		backButton.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//            	changeVis(R.id.observations_cloud_view);
-//            	}
-//        });
-//		
-	}
+
+//********************************************************************************************
 
 	private void setupNewObservationView() {
 
-		newObsItemContent = (TextView) findViewById(R.id.observation_text);
 		Button newObsBackButton = (Button) findViewById(R.id.new_obs_cancel_button);
 		Button newObsSubmitButton = (Button) findViewById(R.id.new_obs_submit_button);
 		itemPicker = (Spinner) findViewById(R.id.item_picker);
@@ -112,6 +97,7 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
             	String areaText = (String) areaPicker.getSelectedItem();
             	String obsText = observationText.getText().toString();
             	obs.setObservationData(itemText, areaText, obsText);
+
             	Dao<Observation, Integer> observationDao = getHelper().getObservationDao();
             	try {
 					observationDao.create(obs);
@@ -119,47 +105,101 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 					e.printStackTrace();
 				}
 
-            	newObsItemContent.setText("");
-            	changeVis(R.id.observations_details_view);
+				//adds the obs to the array adapter
+				obsList.add(obs);
+				
+				observationText.setText("");
+				setupListView();
+            	changeVis(R.id.observations_list_view);
             	}
         });
 		
 		newObsBackButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-            	newObsItemContent.setText("");
-            	changeVis(R.id.observations_details_view);
+				observationText.setText("");
+				//there may be a need to call setupCloudView() here
+            	changeVis(R.id.observations_cloud_view);
 			}
 		});
 	}
 
+//********************************************************************************************
+	
+	private void setupListView() {
+		Button allFilterButton = (Button) findViewById(R.id.all_filter_button);
+		Button sundalandFilterButton = (Button) findViewById(R.id.sundaland_filter_button);
+		Button borneoFilterButton = (Button) findViewById(R.id.borneo_filter_button);
+		Button sumatraFilterButton = (Button) findViewById(R.id.sumatra_filter_button);
+		Button backButton = (Button) findViewById(R.id.list_back_button);
+		ListView listOfObservations = (ListView) findViewById(R.id.list_of_observations);
+
+		observationAdapter listAdapter = new observationAdapter();
+		listOfObservations.setAdapter(listAdapter);
+		listOfObservations.setOnItemClickListener(onListClick);
+
+		allFilterButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	//do something
+            }
+        });
+		sundalandFilterButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	//do something
+            	}
+        });
+		borneoFilterButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	//do something
+            	}
+        });
+		sumatraFilterButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	//do something
+            	}
+        });
+		backButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	changeVis(R.id.observations_cloud_view);
+            	}
+        });
+		
+	}
+
+//********************************************************************************************
 	
 	private void setupDetailsView() {
 		Button detailsBackButton = (Button) findViewById(R.id.details_back_button);
 		detailsBackButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	changeVis(R.id.observations_cloud_view);
+            	changeVis(R.id.observations_list_view);
             	}
         });
 
-		//Observation obs = GET THE SELECTED OBSERVATION FROM THE DB
 		ImageView detailsAreaImage = (ImageView) findViewById(R.id.details_selected_item_area);
 		TextView detailsTitle = (TextView) findViewById(R.id.details_selected_item_text);
 		TextView detailsContent = (TextView) findViewById(R.id.details_selected_item_content);
 		//TextView detailsTags = (TextView) findViewById(R.id.details_selected_item_tags);
 
-//		if (obs.getArea() == "Sundaland") {
-//			detailsAreaImage.setImageDrawable(getResources().getDrawable(R.drawable.sud_tag));
-//		}
-//		else if (obs.getArea() == "Borneo") {
-//			detailsAreaImage.setImageDrawable(getResources().getDrawable(R.drawable.bor_tag));
-//		}
-//		else {
-//			detailsAreaImage.setImageDrawable(getResources().getDrawable(R.drawable.sum_tag));
-//		}
-//		detailsTitle.setText(obs.getItem());
-//		detailsContent.setText(obs.getText());
-		
+		//this check is for the first pass in onCreate, where the object is null
+		if (currentObs != null) {
+	
+			if (currentObs.getArea() == "Sundaland") {
+				detailsAreaImage.setImageDrawable(getResources().getDrawable(R.drawable.sud_tag));
+			}
+			else if (currentObs.getArea() == "Borneo") {
+				detailsAreaImage.setImageDrawable(getResources().getDrawable(R.drawable.bor_tag));
+			}
+			else {
+				detailsAreaImage.setImageDrawable(getResources().getDrawable(R.drawable.sum_tag));
+			}
+			detailsTitle.setText(currentObs.getItem());
+			detailsContent.setText(currentObs.getText());
+		}
+
 	}
+
+//********************************************************************************************
+//HELPER FUNCTIONS
 	
 	private void changeVis(int vis) {
         findViewById(R.id.observations_cloud_view).setVisibility(View.GONE);
@@ -168,4 +208,69 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
         findViewById(R.id.observations_details_view).setVisibility(View.GONE);
         findViewById(vis).setVisibility(View.VISIBLE);
 	}
+
+	
+	class observationAdapter extends ArrayAdapter<Observation> {
+		observationAdapter() {
+			super(ObservationsActivity.this, R.layout.row, obsList);
+		}
+
+		public View getView(int position, View convertView, ViewGroup parent) {
+			View row = convertView;
+			observationHolder holder = null;
+
+			if (row == null) {
+				LayoutInflater inflater = getLayoutInflater();
+				row = inflater.inflate(R.layout.row, parent, false);
+				holder = new observationHolder(row);
+				row.setTag(holder);
+			} else {
+				holder = (observationHolder) row.getTag();
+			}
+
+			holder.populateFrom(obsList.get(position));
+
+			return (row);
+		}
+	}
+
+	
+	static class observationHolder {
+		private TextView content = null;
+		private View row = null;
+		private ImageView tag = null;
+
+		observationHolder(View row) {
+			this.row = row;
+			content = (TextView) row.findViewById(R.id.titleRow);
+			tag = (ImageView) row.findViewById(R.id.areaTag);
+		}
+
+		void populateFrom(Observation obs) {
+			content.setText(obs.getItem() + " - " + obs.getText());
+			if (obs.getArea().equals("Sundaland")) {
+				tag.setImageResource(R.drawable.sud_tag);	
+			}
+			else if (obs.getArea().equals("Borneo")) {
+				tag.setImageResource(R.drawable.bor_tag);
+			}
+			else {
+				tag.setImageResource(R.drawable.sum_tag);
+			}
+		}
+	}
+
+	private AdapterView.OnItemClickListener onListClick = new AdapterView.OnItemClickListener() {
+		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+			currentObs = obsList.get(position);
+			setupDetailsView();
+			changeVis(R.id.observations_details_view);
+		}
+	};
+
+	//override to disable the back button
+	public void onBackPressed() {
+	   return;
+	}
+
 }

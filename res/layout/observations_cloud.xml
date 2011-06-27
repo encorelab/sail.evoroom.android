@@ -1,10 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="match_parent" android:layout_height="match_parent" >
-<!-- 	android:layout_gravity="center" android:orientation="vertical" -->
-<!-- 	android:background="#FFFFFF" android:padding="20sp" android:visibility="gone" -->
 
-	<Button android:layout_width="wrap_content" android:text="View all" android:layout_height="wrap_content" android:id="@+id/view_observations_button"></Button>
-    <Button android:layout_width="wrap_content" android:text="Add an observation" android:layout_height="wrap_content" android:id="@+id/add_observation_button"></Button>
+	<TextView android:id="@+id/cloud_flora_text"
+		android:layout_width="540sp" android:layout_height="310sp"
+		android:layout_alignParentTop="true" android:layout_marginTop="90sp"
+		android:layout_centerHorizontal="true"
+		android:background="#000000" android:textColor="#F2F2F2" />
+	<ImageView android:src="@drawable/flora_heading"
+    	android:layout_width="wrap_content" android:layout_height="wrap_content"		
+		android:layout_marginLeft="80sp"
+		android:layout_marginTop="60sp" />
+	
+	<TextView android:id="@+id/cloud_fauna_text"
+		android:layout_width="540sp" android:layout_height="310sp"
+		android:layout_below="@id/cloud_flora_text" android:layout_marginTop="90sp"
+		android:layout_centerHorizontal="true"
+		android:background="#000000" android:textColor="#F2F2F2" />
+	<ImageView android:src="@drawable/fauna_heading"
+    	android:layout_width="wrap_content" android:layout_height="wrap_content"		
+		android:layout_below="@id/cloud_flora_text"
+		android:layout_marginTop="60sp" android:layout_marginLeft="80sp"/>
+	
+    <Button android:id="@+id/add_observation_button" android:background="@drawable/add_an_observation"
+    	android:layout_width="wrap_content" android:layout_height="wrap_content"
+    	android:layout_alignParentBottom="true" android:layout_marginBottom="30sp"
+    	android:layout_centerHorizontal="true" />
+	<Button android:id="@+id/view_observations_button" android:background="@drawable/view_all"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_above="@id/add_observation_button" android:layout_marginBottom="20sp" 
+		android:layout_alignRight="@id/cloud_fauna_text" />
 
-</LinearLayout>
+</RelativeLayout>
