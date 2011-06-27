@@ -394,28 +394,25 @@ public class FieldGuideActivity extends Activity {
 		sourcesContent.setText(" ");
 		
 		if (speciesSelected.equals("rafflesia_arnoldii")) {
-			
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.rafflesia));
 		}
 		if (speciesSelected.equals("amorphophallus_titanum")) {
-			
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.titan_arum));
 		}
 		if (speciesSelected.equals("ficus_elastica")) {
 			
 		}
 		if (speciesSelected.equals("ficus_benjamina")) {
-			
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.benjamin_fig));
 		}
 		if (speciesSelected.equals("ficus_microcarpa")) {
-			
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.curtain_fig));
 		}
 		if (speciesSelected.equals("tetrastigma")) {
-			
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.tetrastigma));
 		}
 		if (speciesSelected.equals("strangler_fig")) {
-			
-		}
-		if (speciesSelected.equals("amorphophallus_titanum")) {
-			
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.strangler_fig));
 		}
 		
 		if (speciesSelected.equals("striped_rabbit")) {
@@ -429,7 +426,8 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
 		if (speciesSelected.equals("leaf_monkey")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.striped_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.mitered_leaf_monkey));
+			commonNameContent.setText("Sumatran Striped Rabbit");
 			scientificNameContent.setText("Presbytis melalophos");
 			familyContent.setText("Cercopithecidae");
 			descriptionContent.setText("The pollex (thumb) is reduced in this species. The orbits are widely spaced and the hindlimbs are longer as compared to the forelimbs. The average body mass for an adult male mitered leaf-monkey is around 5.9 kilograms, and for the female it is around 5.8 kilograms. This species has a sacculated stomach to assist in the breakdown of cellulose. Infants have a white pelage color with a dark stripe down the back and across the shoulders.");
@@ -439,7 +437,8 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
 		if (speciesSelected.equals("malayan_tapir")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.striped_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.tapir));
+			commonNameContent.setText("Sumatran Striped Rabbit");
 			scientificNameContent.setText("Tapirus indicus");
 			familyContent.setText("Tapiridae");
 			descriptionContent.setText(Html.fromHtml("Also known as the Asian Tapir, the Malayan Tapir (Tapirus indicus) is the largest of the four species of tapir and the only one native to Asia. In the Malay language, the tapir is commonly referred to as \"cipan\", \"tenuk\" or \"badak tampong\".<br/>Notable markings: light colored patch which extends from its shoulders to its rear; the rest of its hair is black and tips of ears white; The pattern is for camouflage;<br/>-Grows to 6-8 feet (1.8 to 2.4 m) in length; stand 3-3.5 feet (90 to 107 cm tall); Females are larger than males<br/>-Poor eyesight but excellent sense of smell<br/>-Communicate with high-pitched squeaks and whistles<br/>-Live near water (bathe and swim often)<br/>-Can climb steep slopes<br/>-Active at night, eating soon after sunset or before sunrise"));
@@ -448,7 +447,8 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
 		if (speciesSelected.equals("sumatran_orangutan")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.striped_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.sumatran_orangutan));
+			commonNameContent.setText("Sumatran Striped Rabbit");
 			scientificNameContent.setText("Pongo abelii");
 			familyContent.setText("Hominidae");
 			descriptionContent.setText(Html.fromHtml("One of two species of orangutans - it is rarer and smaller than Bornean orangutan. The Sumatran and Bornean species diverged 400,000 years ago, but the two islands split at least 21,000 years ago.<br/>-Red-orange coat of hair, and white around the mouth<br/>-Grows to height of 1.4 metres (4.6 ft) tall and 90 kilograms (200 lbs) in males; females smaller 90 centimetres (3.0 ft) and 45 kilograms (99 lbs)<br/>-Tends to be more frugivorous (figs and jackfruits) and insectivorous; it will also eat birds' eggs and small vertebrates<br/>-Observed using tools (breaking tree branches and uses them to dig in tree holes for termites or poke bees nest walls for honey, or to eat fruit<br/>-More social than Bornean orangutan"));
@@ -458,7 +458,8 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
 		if (speciesSelected.equals("sunda_leopard")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.striped_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.clouded_leopard));
+			commonNameContent.setText("Sumatran Striped Rabbit");
 			scientificNameContent.setText("Neofelis diardi");
 			familyContent.setText("Felidae");
 			descriptionContent.setText("The Sunda Clouded Leopard, also known as the Sundaland Clouded Leopard and the Bornean clouded leopard is a medium-sized wild cat found in Borneo and Sumatra. The Sunda clouded leopard is the largest felid in Borneo, and has a stocky build, weighing around 12 to 25 kg (26 to 55 lb). The canine teeth are two inches long, which, in proportion to the skull length, are longer than those of any other extant feline. Its tail can grow to be as long as its body, aiding balance. Its coat is marked with irregularly-shaped, dark-edged ovals which are said to be shaped like clouds, hence its common name. In 2006, it was classified as a separate species, distinct from its continental relative Neofelis nebulosa.");
@@ -468,7 +469,8 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
 		if (speciesSelected.equals("sumatran_rhino")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.striped_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.sumatran_rhino));
+			commonNameContent.setText("Sumatran Striped Rabbit");
 			scientificNameContent.setText("Dicerorhinus sumatrensis");
 			familyContent.setText("Rhinocerotidae");
 			descriptionContent.setText("The Sumatran rhino lives an estimated 30-45 years in the wild. They are solitary creatures except when pairing prior to mating and during child rearing. They are most active when eating at dawn or just after dusk, loves to wallow in mud baths to cool down and rest. In rainy seasons, the rhinos will move to higher elevations and in cooler months in the lower areas. The Sumatran Rhinos are fast and agile; they climb mountains easily and comfortably traverses steep slopes and riverbanks.");
@@ -478,7 +480,8 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
 		if (speciesSelected.equals("sumatran_tiger")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.striped_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.sumatran_tiger));
+			commonNameContent.setText("Sumatran Striped Rabbit");
 			scientificNameContent.setText("Panthera tigris sumatrae");
 			familyContent.setText("Felidae");
 			descriptionContent.setText(Html.fromHtml("The Sumatran tiger is the smallest of the tiger subspecies. Sumatran male tigers average 8 feet (2.438m) in length and weigh about 265 lbs. (120.2kg), while females average 7 feet (2.134m) in length and weigh about 200 lbs (90.718kg). Their small size helps them move through the jungle, and stripes and patterning is adapted for camouflage in the tall grass and underbush. Males are more bearded and maned (neck and cheek is developed).<br/>-They have webbed toes and are fast swimmers - they run their prey into the water<br/>-White spots on the back of tiger's ears are called \"eye spots\" or \"predator spots\". These spots are believed to function as false eyes as well as to make it look larger to any predator approaching from behind. This is particularly helpful in keeping cubs safe.<br/>-Sumatra provides a varying landscape in which this subspecies lives. From peat-moss forest, submountain and mountain forest as well as lowland forest. As a result, the Sumatran Tiger's coat has evolved slightly different from the other tiger subspecies. This evolution adaptation to their environment give the them the darkest coat of all tigers. The Sumatran Tiger has wide black stripes that are closely spaced, sometimes doubled up on each other. These stripes also run down the animal's forelegs, a distinction setting them apart from the Siberian Tiger.<br/>-They prey on larger ungulates, Wild Boar, Malayan Tapir, deer, smaller animals fowl, monkeys, fish, and mice (when desperate for food)."));
@@ -488,7 +491,8 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
 		if (speciesSelected.equals("fig_wasp_sumatra")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.striped_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.fig_wasp2));
+			commonNameContent.setText("Sumatran Striped Rabbit");
 			scientificNameContent.setText("Eupristina verticillata");
 			familyContent.setText("Agaonidae");
 			descriptionContent.setText("Also known as the Chinese banyan pollinator wasp, the Eupristina verticillata is a sub species of fig wasps in from the Agaonidae family. They pollinate figs or are otherwise associated with figs in a coevolutional relationship that has been developing for at least 80 million years.");
@@ -496,7 +500,8 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
 		if (speciesSelected.equals("fig_wasp_borneo")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.striped_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.fig_wasp1));
+			commonNameContent.setText("Sumatran Striped Rabbit");
 			scientificNameContent.setText("");
 			familyContent.setText("");
 			descriptionContent.setText("");
@@ -506,7 +511,8 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
 		if (speciesSelected.equals("rhino_hornbill")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.striped_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.rhinoceros_hornbill));
+			commonNameContent.setText("Sumatran Striped Rabbit");
 			scientificNameContent.setText("");
 			familyContent.setText("");
 			descriptionContent.setText("");
@@ -516,7 +522,8 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
 		if (speciesSelected.equals("rhinoplax_vigil")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.striped_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.helmeted_hornbill));
+			commonNameContent.setText("Sumatran Striped Rabbit");
 			scientificNameContent.setText("");
 			familyContent.setText("");
 			descriptionContent.setText("");
@@ -526,7 +533,8 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
 		if (speciesSelected.equals("grey_hornbill")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.striped_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.malabar_grey_hornbill));
+			commonNameContent.setText("Sumatran Striped Rabbit");
 			scientificNameContent.setText("");
 			familyContent.setText("");
 			descriptionContent.setText("");
@@ -536,7 +544,8 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
 		if (speciesSelected.equals("proboscis_monkey")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.striped_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.proboscis_monkey));
+			commonNameContent.setText("");
 			scientificNameContent.setText("");
 			familyContent.setText("");
 			descriptionContent.setText("");
@@ -546,7 +555,8 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
 		if (speciesSelected.equals("borneo_orangutan")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.striped_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.borneo_orang));
+			commonNameContent.setText("");
 			scientificNameContent.setText("");
 			familyContent.setText("");
 			descriptionContent.setText("");
@@ -555,7 +565,6 @@ public class FieldGuideActivity extends Activity {
 			sourcesContent.setText("");
 			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
 		}
-
 
 	}
 
