@@ -7,6 +7,7 @@ import java.util.List;
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.stmt.QueryBuilder;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 
@@ -29,7 +30,7 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 	Spinner areaPicker = null;
 	private EditText observationText = null;
 
-	Dao<Observation, Integer> observationDao = null;
+	private Dao<Observation, Integer> observationDao;
 	Observation currentObs = null;
 	
 	List<Observation> obsList = new ArrayList<Observation>();
@@ -39,11 +40,15 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.observations);
 
-        //maybe do this in oncreate, onresume, etc.
-		Dao<Observation, Integer> observationDao = getHelper().getObservationDao();
-		// page through all of the observations in the database
-		for (Observation obs : observationDao) {
-			obsList.add(obs);
+        Dao<Observation, Integer> observationDao = getHelper().getObservationDao();
+    	QueryBuilder<Observation, Integer> statementBuilder = observationDao.queryBuilder();
+    	try {
+			statementBuilder.orderBy("item", true);
+			obsList.clear();
+			obsList = observationDao.query(statementBuilder.prepare());
+			setupListView();
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 
         setupCloudView();
@@ -139,23 +144,66 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 
 		allFilterButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	//do something
+            	Dao<Observation, Integer> observationDao = getHelper().getObservationDao();
+            	QueryBuilder<Observation, Integer> statementBuilder = observationDao.queryBuilder();
+            	try {
+					statementBuilder.orderBy("item", true);
+					
+					//clear the list and repopulate from db based on criteria 
+					obsList.clear();
+					obsList = observationDao.query(statementBuilder.prepare());
+					setupListView();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				setupListView();
             }
         });
 		sundalandFilterButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	//do something
-            	}
+            	Dao<Observation, Integer> observationDao = getHelper().getObservationDao();
+            	QueryBuilder<Observation, Integer> statementBuilder = observationDao.queryBuilder();
+            	try {
+					statementBuilder.orderBy("item", true).where().eq("area", "Sundaland");
+					
+					//clear the list and repopulate from db based on criteria 
+					obsList.clear();
+					obsList = observationDao.query(statementBuilder.prepare());
+					setupListView();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+            }
         });
 		borneoFilterButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	//do something
-            	}
+            	Dao<Observation, Integer> observationDao = getHelper().getObservationDao();
+            	QueryBuilder<Observation, Integer> statementBuilder = observationDao.queryBuilder();
+            	try {
+					statementBuilder.orderBy("item", true).where().eq("area", "Borneo");
+					
+					obsList.clear();
+					obsList = observationDao.query(statementBuilder.prepare());
+					setupListView();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+            }
         });
 		sumatraFilterButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	//do something
-            	}
+            	Dao<Observation, Integer> observationDao = getHelper().getObservationDao();
+            	QueryBuilder<Observation, Integer> statementBuilder = observationDao.queryBuilder();
+            	try {
+					statementBuilder.orderBy("item", true).where().eq("area", "Sumatra");
+
+					obsList.clear();
+					obsList = observationDao.query(statementBuilder.prepare());
+					setupListView();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+            }
         });
 		backButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
