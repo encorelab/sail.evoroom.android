@@ -43,7 +43,7 @@
 				android:textColor="#000000" android:textSize="18sp" android:text=" " />
 			<TextView android:id="@id/familyField"
 				android:layout_width="wrap_content"	android:layout_height="wrap_content"
-				android:layout_alignBaseline="@id/familyContent" android:layout_marginLeft="146sp"
+				android:layout_alignBaseline="@id/familyContent" android:layout_marginLeft="147sp"
 				android:textColor="#000000" android:textSize="18sp" android:textStyle="bold"
 				android:text="Family: "/>
 		

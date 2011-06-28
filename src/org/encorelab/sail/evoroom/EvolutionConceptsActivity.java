@@ -10,5 +10,10 @@ public class EvolutionConceptsActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.evolution_concepts);
 	}
+
+	//override to disable the back button
+	public void onBackPressed() {
+	   return;
+	}
 	
 }
