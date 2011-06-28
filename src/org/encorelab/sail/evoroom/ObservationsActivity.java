@@ -12,17 +12,20 @@ import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 	//for newObsView
@@ -40,6 +43,7 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.observations);
 
+        // can't this to work without declaring it in each method, shouldn't be necessary
         Dao<Observation, Integer> observationDao = getHelper().getObservationDao();
     	QueryBuilder<Observation, Integer> statementBuilder = observationDao.queryBuilder();
     	try {
@@ -72,6 +76,13 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
             }
         });
 		
+        Button linkButton1 = (Button) findViewById(R.id.test_btn);
+        linkButton1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	changeVis(R.id.observations_new_observation_view);
+            }
+        });
+
 	}
 
 
@@ -84,6 +95,16 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 		itemPicker = (Spinner) findViewById(R.id.item_picker);
 		areaPicker = (Spinner) findViewById(R.id.area_picker);
 		observationText = (EditText) findViewById(R.id.observation_text);
+		final CheckBox check1, check2, check3, check4, check5, check6, check7, check8, check9;
+		check1 = (CheckBox) findViewById(R.id.check1);
+		check2 = (CheckBox) findViewById(R.id.check2);
+		check3 = (CheckBox) findViewById(R.id.check3);
+		check4 = (CheckBox) findViewById(R.id.check4);
+		check5 = (CheckBox) findViewById(R.id.check5);
+		check6 = (CheckBox) findViewById(R.id.check6);
+		check7 = (CheckBox) findViewById(R.id.check7);
+		check8 = (CheckBox) findViewById(R.id.check8);
+		check9 = (CheckBox) findViewById(R.id.check9);
 		
 	    ArrayAdapter<CharSequence> itemAdapter = ArrayAdapter.createFromResource(
 	            this, R.array.items, android.R.layout.simple_spinner_item);
@@ -101,22 +122,127 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
             	String itemText = (String) itemPicker.getSelectedItem();
             	String areaText = (String) areaPicker.getSelectedItem();
             	String obsText = observationText.getText().toString();
-            	obs.setObservationData(itemText, areaText, obsText);
-
-            	Dao<Observation, Integer> observationDao = getHelper().getObservationDao();
-            	try {
-					observationDao.create(obs);
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-
-				//adds the obs to the array adapter
-				obsList.add(obs);
-				
-				observationText.setText("");
-				setupListView();
-            	changeVis(R.id.observations_list_view);
+            	String tagsText = "";
+            	Boolean boxChecked = false;
+            	
+            	if (check1.isChecked()) {
+            		tagsText += "sexual selection" ;
+            		boxChecked = true;
             	}
+            	if (check2.isChecked()) {
+            		if (tagsText.isEmpty()) {
+            			tagsText += "bottleneck";
+            		}
+            		else {
+            			tagsText += ", bottleneck";
+            		}
+            		boxChecked = true;
+            	}
+            	if (check3.isChecked()) {
+            		if (tagsText.isEmpty()) {
+            			tagsText += "reproductive isolation";
+            		}
+            		else {
+            			tagsText += ", reproductive isolation";
+            		}
+            		boxChecked = true;
+            	}
+            	if (check4.isChecked()) {
+            		if (tagsText.isEmpty()) {
+            			tagsText += "natural selection";
+            		}
+            		else {
+            			tagsText += ", natural selection";
+            		}
+            		boxChecked = true;
+            	}
+            	if (check5.isChecked()) {
+            		if (tagsText.isEmpty()) {
+            			tagsText += "founder effect";
+            		}
+            		else {
+            			tagsText += ", founder effect";
+            		}
+            		boxChecked = true;
+            	}
+            	if (check6.isChecked()) {
+            		if (tagsText.isEmpty()) {
+            			tagsText += "adaption";
+            		}
+            		else {
+            			tagsText += ", adaption";
+            		}
+            		boxChecked = true;
+            	}
+            	if (check7.isChecked()) {
+            		if (tagsText.isEmpty()) {
+            			tagsText += "coevolution";
+            		}
+            		else {
+            			tagsText += ", coevolution";
+            		}
+            		boxChecked = true;
+            	}
+            	if (check8.isChecked()) {
+            		if (tagsText.isEmpty()) {
+            			tagsText += "gene flow";
+            		}
+            		else {
+            			tagsText += ", gene flow";
+            		}
+            		boxChecked = true;
+            	}
+            	if (check9.isChecked()) {
+            		if (tagsText.isEmpty()) {
+            			tagsText += "other";
+            		}
+            		else {
+            			tagsText += ", other";
+            		}
+            		boxChecked = true;
+            	}
+
+            	
+//            	String itemText = (String) itemPicker.getSelectedItem();
+//            	String areaText = (String) areaPicker.getSelectedItem();
+//            	String obsText = observationText.getText().toString();
+//            	String tagsText = "";
+
+
+            	if (!obsText.equals("") && boxChecked == true) {
+            	
+	            	obs.setObservationData(itemText, areaText, obsText, tagsText);
+	            	
+	            	Dao<Observation, Integer> observationDao = getHelper().getObservationDao();
+	            	try {
+						observationDao.create(obs);
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+	
+					//adds the obs to the array adapter
+					obsList.add(obs);
+					
+					//clear everything and change views
+					observationText.setText("");
+					check1.setChecked(false);
+					check2.setChecked(false);
+					check3.setChecked(false);
+					check4.setChecked(false);
+					check5.setChecked(false);
+					check6.setChecked(false);
+					check7.setChecked(false);
+					check8.setChecked(false);
+					check9.setChecked(false);
+					setupListView();
+	            	changeVis(R.id.observations_list_view);
+            	}
+            	else {
+    				Toast toast = Toast.makeText(ObservationsActivity.this, "Please fill out all fields and choose tags", Toast.LENGTH_LONG);
+    				toast.setGravity(Gravity.CENTER|Gravity.CENTER, 0, 0);
+    				toast.show();
+            	}
+            }
         });
 		
 		newObsBackButton.setOnClickListener(new View.OnClickListener() {
@@ -226,7 +352,7 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 		ImageView detailsAreaImage = (ImageView) findViewById(R.id.details_selected_item_area);
 		TextView detailsTitle = (TextView) findViewById(R.id.details_selected_item_text);
 		TextView detailsContent = (TextView) findViewById(R.id.details_selected_item_content);
-		//TextView detailsTags = (TextView) findViewById(R.id.details_selected_item_tags);
+		TextView detailsTags = (TextView) findViewById(R.id.details_selected_item_tags);
 
 		//this check is for the first pass in onCreate, where the object is null
 		if (currentObs != null) {
@@ -242,6 +368,7 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 			}
 			detailsTitle.setText(currentObs.getItem());
 			detailsContent.setText(currentObs.getText());
+			detailsTags.setText(currentObs.getTags());
 		}
 
 	}

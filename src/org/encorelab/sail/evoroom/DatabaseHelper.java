@@ -20,9 +20,10 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	private static final String DATABASE_NAME = "evoroom.db";
 	// any time you make changes to your database objects, you may have to increase the database version
 	// you can't go backwards in version
-	private static final int DATABASE_VERSION = 3;
+	// this must also be ++ed whenever you alter the structure of the object
+	private static final int DATABASE_VERSION = 4;
 
-	// the DAO object we use to access the SimpleData table
+	// the DAO object we use to access the table
 	private Dao<Observation, Integer> observationDao = null;
 
 	public DatabaseHelper(Context context) {

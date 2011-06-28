@@ -14,15 +14,18 @@ public class Observation {
 	private String area;
 	@DatabaseField
 	private String text;
+	@DatabaseField
+	private String tags;
 
 	Observation() {
 		// needed by ormlite
 	}
 	
-	public void setObservationData (String observationItem, String observationArea, String observationText) {
+	public void setObservationData (String observationItem, String observationArea, String observationText, String observationTags) {
 		setItem(observationItem);
 		setArea(observationArea);
 		setText(observationText);
+		setTags(observationTags);
 	}
 	
 	public String toString() {
@@ -66,5 +69,12 @@ public class Observation {
 		return text;
 	}
 
+	public void setTags(String tags) {
+		this.tags = tags;
+	}
+
+	public String getTags() {
+		return tags;
+	}
 
 }

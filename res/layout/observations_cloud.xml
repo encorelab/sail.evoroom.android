@@ -21,6 +21,11 @@
     	android:layout_width="wrap_content" android:layout_height="wrap_content"		
 		android:layout_below="@id/cloud_flora_text"
 		android:layout_marginTop="60sp" android:layout_marginLeft="80sp"/>
+	<Button android:id="@+id/test_btn" android:text="test"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_below="@id/cloud_flora_text" android:layout_marginTop="190sp"
+		android:layout_alignLeft="@id/cloud_fauna_text" android:layout_marginLeft="30sp"
+		android:background="#000000" android:textColor="#F2F2F2" />
 	
     <Button android:id="@+id/add_observation_button" android:background="@drawable/add_an_observation"
     	android:layout_width="wrap_content" android:layout_height="wrap_content"

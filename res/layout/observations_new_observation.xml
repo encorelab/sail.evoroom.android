@@ -17,13 +17,43 @@
 		android:layout_marginTop="25sp" android:gravity="top"
 		android:textSize="25sp"		 
     	android:background="#000000" android:textColor="#F2F2F2" />
-    <EditText android:id="@+id/observation_tags" android:hint="Should these be check boxes or something?"
-		android:layout_width="500sp" android:layout_height="200sp"
+    <TextView android:id="@+id/observation_tags" android:text="Choose tags"
+		android:layout_width="500sp" android:layout_height="160sp"
 		android:layout_centerHorizontal="true" android:layout_below="@id/observation_text"
 		android:layout_marginTop="40sp" android:gravity="top"
 		android:textSize="25sp"		 
     	android:background="#000000" android:textColor="#F2F2F2" />
-    	
+
+	<TableLayout
+		android:layout_width="500sp" android:layout_height="150sp"
+		android:layout_centerHorizontal="true" android:layout_below="@id/observation_text"
+		android:layout_marginTop="90sp" android:background="#000000" >
+		<TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+			<CheckBox android:id="@+id/check1" android:text="Sexual selection"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<CheckBox android:id="@+id/check2" android:text="Bottleneck"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<CheckBox android:id="@+id/check3" android:text="Reproductive isolation"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		</TableRow>
+		<TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+			<CheckBox android:id="@+id/check4" android:text="Natural selection"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<CheckBox android:id="@+id/check5" android:text="Founder effect"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<CheckBox android:id="@+id/check6" android:text="Gene flow"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		</TableRow>
+		<TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+			<CheckBox android:id="@+id/check7" android:text="Coevolution"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<CheckBox android:id="@+id/check8" android:text="Adaption"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<CheckBox android:id="@+id/check9" android:text="Other"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		</TableRow>
+	</TableLayout>	    	
+
 	<Button android:id="@+id/new_obs_cancel_button" android:background="@drawable/cancel_btn"		
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
 		android:layout_alignParentBottom="true" android:layout_marginBottom="40sp"
