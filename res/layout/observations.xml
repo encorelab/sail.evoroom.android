@@ -9,7 +9,6 @@
 	<include android:id="@+id/observations_cloud_view" layout="@layout/observations_cloud" />
 	<include android:id="@+id/observations_new_observation_view" layout="@layout/observations_new_observation" />
 	<include android:id="@+id/observations_list_view" layout="@layout/observations_list" />
-	<include android:id="@+id/observations_chosen_item_view" layout="@layout/observations_chosen_item" />
 	<include android:id="@+id/observations_details_view" layout="@layout/observations_details" />
 	
 </LinearLayout>

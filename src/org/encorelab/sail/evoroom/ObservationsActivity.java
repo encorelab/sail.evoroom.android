@@ -33,17 +33,16 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 	Spinner areaPicker = null;
 	private EditText observationText = null;
 
-	private Dao<Observation, Integer> observationDao;
 	Observation currentObs = null;
+	boolean allFlag = true;				// awk flag to allow all items to be listed in setupListView()
 	
 	List<Observation> obsList = new ArrayList<Observation>();
-	
 	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.observations);
 
-        // can't this to work without declaring it in each method, shouldn't be necessary
+        // can't get this to work without declaring it in each method, shouldn't be necessary
         Dao<Observation, Integer> observationDao = getHelper().getObservationDao();
     	QueryBuilder<Observation, Integer> statementBuilder = observationDao.queryBuilder();
     	try {
@@ -58,7 +57,6 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
         setupCloudView();
         setupNewObservationView();
         setupListView();
-        setupChosenItemView();
         setupDetailsView();
 	}
 
@@ -66,69 +64,238 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 	private void setupCloudView() {
 		Button viewObservationsButton = (Button) findViewById(R.id.view_observations_button);
 		Button addObservationButton = (Button) findViewById(R.id.add_observation_button);
-		Button faunaTetraButton, faunaFigButton, faunaRafflButton, faunaTitanButton, faunaEnvirButton, faunaOtherButton;
-		faunaFigButton = (Button) findViewById(R.id.fauna_fig_btn);
-		faunaTetraButton = (Button) findViewById(R.id.fauna_tetra_btn);
-		faunaRafflButton = (Button) findViewById(R.id.fauna_raffl_btn);
-		faunaTitanButton = (Button) findViewById(R.id.fauna_titan_btn);
-		faunaEnvirButton = (Button) findViewById(R.id.fauna_envir_btn);
-		faunaOtherButton = (Button) findViewById(R.id.fauna_other_btn);
+		Button faunaLeopardButton, faunaFigWaspButton, faunaHornbillButton, faunaMonkeyButton, faunaOrangutanButton, faunaRabbitButton, faunaRhinoButton, faunaTapirButton, faunaTigerButton;
+		Button floraFigButton, floraTetraButton, floraRafflButton, floraTitanButton, floraEnvirButton, floraOtherButton;
+		faunaLeopardButton = (Button) findViewById(R.id.fauna_leopard_btn);
+		faunaFigWaspButton = (Button) findViewById(R.id.fauna_fig_wasp_btn);
+		faunaHornbillButton = (Button) findViewById(R.id.fauna_hornbill_btn);
+		faunaMonkeyButton = (Button) findViewById(R.id.fauna_monkey_btn);
+		faunaOrangutanButton = (Button) findViewById(R.id.fauna_orangutan_btn);
+		faunaRabbitButton = (Button) findViewById(R.id.fauna_rabbit_btn);
+		faunaRhinoButton = (Button) findViewById(R.id.fauna_rhino_btn);
+		faunaTapirButton = (Button) findViewById(R.id.fauna_tapir_btn);
+		faunaTigerButton = (Button) findViewById(R.id.fauna_tiger_btn);
+		floraFigButton = (Button) findViewById(R.id.flora_fig_btn);
+		floraTetraButton = (Button) findViewById(R.id.flora_tetra_btn);
+		floraRafflButton = (Button) findViewById(R.id.flora_raffl_btn);
+		floraTitanButton = (Button) findViewById(R.id.flora_titan_btn);
+		floraEnvirButton = (Button) findViewById(R.id.flora_envir_btn);
+		floraOtherButton = (Button) findViewById(R.id.flora_other_btn);
 
-		/*something like:
-		 * set the default slightly smaller?
-		 * int adder = 5;
-		 * for every hit in db returns list
-		 * list count * adder = new text size;
-		 * 
-		 * PUT THIS IN ITS OWN FUCNTION
-		 */
-		
+		int fontSize;
+		if ((fontSize = getFontSizeIncrementer("Clouded leopard")) > 0) {
+			faunaLeopardButton.setVisibility(View.VISIBLE);
+			faunaLeopardButton.setTextSize(fontSize);
+		} else {
+			faunaLeopardButton.setVisibility(View.GONE);
+		}
+		if ((fontSize = getFontSizeIncrementer("Fig wasp")) > 0) {
+			faunaFigWaspButton.setVisibility(View.VISIBLE);
+			faunaFigWaspButton.setTextSize(fontSize);
+		} else {
+			faunaFigWaspButton.setVisibility(View.GONE);
+		}
+		if ((fontSize = getFontSizeIncrementer("Hornbill")) > 0) {
+			faunaHornbillButton.setVisibility(View.VISIBLE);
+			faunaHornbillButton.setTextSize(fontSize);
+		} else {
+			faunaHornbillButton.setVisibility(View.GONE);
+		}
+		if ((fontSize = getFontSizeIncrementer("Monkey")) > 0) {
+			faunaMonkeyButton.setVisibility(View.VISIBLE);
+			faunaMonkeyButton.setTextSize(fontSize);
+		} else {
+			faunaMonkeyButton.setVisibility(View.GONE);
+		}
+		if ((fontSize = getFontSizeIncrementer("Orangutan")) > 0) {
+			faunaOrangutanButton.setVisibility(View.VISIBLE);
+			faunaOrangutanButton.setTextSize(fontSize);
+		} else {
+			faunaOrangutanButton.setVisibility(View.GONE);
+		}
+		if ((fontSize = getFontSizeIncrementer("Rabbit")) > 0) {
+			faunaRabbitButton.setVisibility(View.VISIBLE);
+			faunaRabbitButton.setTextSize(fontSize);
+		} else {
+			faunaRabbitButton.setVisibility(View.GONE);
+		}
+		if ((fontSize = getFontSizeIncrementer("Rhinoceros")) > 0) {
+			faunaRhinoButton.setVisibility(View.VISIBLE);
+			faunaRhinoButton.setTextSize(fontSize);
+		} else {
+			faunaRhinoButton.setVisibility(View.GONE);
+		}
+		if ((fontSize = getFontSizeIncrementer("Tapir")) > 0) {
+			faunaTapirButton.setVisibility(View.VISIBLE);
+			faunaTapirButton.setTextSize(fontSize);
+		} else {
+			faunaTapirButton.setVisibility(View.GONE);
+		}
+		if ((fontSize = getFontSizeIncrementer("Tiger")) > 0) {
+			faunaTigerButton.setVisibility(View.VISIBLE);
+			faunaTigerButton.setTextSize(fontSize);
+		} else {
+			faunaTigerButton.setVisibility(View.GONE);
+		}
+
+		if ((fontSize = getFontSizeIncrementer("Fig")) > 0) {
+			floraFigButton.setVisibility(View.VISIBLE);
+			floraFigButton.setTextSize(fontSize);
+		} else {
+			floraFigButton.setVisibility(View.GONE);
+		}
+		if ((fontSize = getFontSizeIncrementer("Tetrastigma")) > 0) {
+			floraTetraButton.setVisibility(View.VISIBLE);
+			floraTetraButton.setTextSize(fontSize);
+		} else {
+			floraTetraButton.setVisibility(View.GONE);
+		}
+		if ((fontSize = getFontSizeIncrementer("Rafflesia")) > 0) {
+			floraRafflButton.setVisibility(View.VISIBLE);
+			floraRafflButton.setTextSize(fontSize);
+		} else {
+			floraTetraButton.setVisibility(View.GONE);
+		}
+		if ((fontSize = getFontSizeIncrementer("Titan arum")) > 0) {
+			floraTitanButton.setVisibility(View.VISIBLE);
+			floraTitanButton.setTextSize(fontSize);
+		} else {
+			floraTitanButton.setVisibility(View.GONE);
+		}
+		if ((fontSize = getFontSizeIncrementer("Environment")) > 0) {
+			floraEnvirButton.setVisibility(View.VISIBLE);
+			floraEnvirButton.setTextSize(fontSize);
+		} else {
+			floraEnvirButton.setVisibility(View.GONE);
+		}
+		if ((fontSize = getFontSizeIncrementer("Other")) > 0) {
+			floraOtherButton.setVisibility(View.VISIBLE);
+			floraOtherButton.setTextSize(fontSize);
+		} else {
+			floraOtherButton.setVisibility(View.GONE);
+		}
+
         viewObservationsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+            	allFlag = true;
+            	setupListView();
             	changeVis(R.id.observations_list_view);
             }
         });
+        faunaLeopardButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	updateList("Clouded leopard");
+            	setupListView();
+            	changeVis(R.id.observations_list_view);
+            }
+        });
+        faunaFigWaspButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	updateList("Fig wasp");
+            	setupListView();
+            	changeVis(R.id.observations_list_view);
+            }
+        });
+        faunaHornbillButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	updateList("Hornbill");
+            	setupListView();
+            	changeVis(R.id.observations_list_view);
+            }
+        });
+        faunaMonkeyButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	updateList("Monkey");
+            	setupListView();
+            	changeVis(R.id.observations_list_view);
+            }
+        });
+        faunaOrangutanButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	updateList("Orangutan");
+            	setupListView();
+            	changeVis(R.id.observations_list_view);
+            }
+        });
+        faunaRabbitButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	updateList("Rabbit");
+            	setupListView();
+            	changeVis(R.id.observations_list_view);
+            }
+        });
+        faunaRhinoButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	updateList("Rhinoceros");
+            	setupListView();
+            	changeVis(R.id.observations_list_view);
+            }
+        });
+        faunaTapirButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	updateList("Tapir");
+            	setupListView();
+            	changeVis(R.id.observations_list_view);
+            }
+        });
+        faunaTigerButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	updateList("Tiger");
+            	setupListView();
+            	changeVis(R.id.observations_list_view);
+            }
+        });
+        floraFigButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	updateList("Fig");
+            	setupListView();
+            	changeVis(R.id.observations_list_view);
+            }
+        });
+        floraTetraButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	updateList("Tetrastigma");
+            	setupListView();
+            	changeVis(R.id.observations_list_view);
+            }
+        });
+        floraRafflButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	updateList("Rafflesia");
+            	setupListView();
+            	changeVis(R.id.observations_list_view);
+            }
+        });
+        floraTitanButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	updateList("Titan arum");
+            	setupListView();
+            	changeVis(R.id.observations_list_view);
+            }
+        });
+        floraEnvirButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	updateList("Environment");
+            	setupListView();
+            	changeVis(R.id.observations_list_view);
+            }
+        });
+        floraOtherButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	updateList("Other");
+            	setupListView();
+            	changeVis(R.id.observations_list_view);
+            }
+        });
+
+        
         addObservationButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	changeVis(R.id.observations_new_observation_view);
             }
         });
-        faunaFigButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            	changeVis(R.id.observations_chosen_item_view);
-            }
-        });
-        faunaTetraButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            	changeVis(R.id.observations_chosen_item_view);
-            }
-        });
-        faunaRafflButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            	changeVis(R.id.observations_chosen_item_view);
-            }
-        });
-        faunaTitanButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            	changeVis(R.id.observations_chosen_item_view);
-            }
-        });
-        faunaEnvirButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            	changeVis(R.id.observations_chosen_item_view);
-            }
-        });
-        faunaOtherButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            	changeVis(R.id.observations_chosen_item_view);
-            }
-        });
-
-
-
 
 	}
-
 
 //********************************************************************************************
 
@@ -285,7 +452,7 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 		newObsBackButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				observationText.setText("");
-				//there may be a need to call setupCloudView() here
+				setupCloudView();
             	changeVis(R.id.observations_cloud_view);
 			}
 		});
@@ -301,16 +468,18 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 		Button backButton = (Button) findViewById(R.id.list_back_button);
 		ListView listOfObservations = (ListView) findViewById(R.id.list_of_observations);
 
-    	Dao<Observation, Integer> observationDao = getHelper().getObservationDao();
-    	QueryBuilder<Observation, Integer> statementBuilder = observationDao.queryBuilder();
-    	try {
-			statementBuilder.orderBy("item", true);
-			
-			//clear the list and repopulate from db based on criteria 
-			obsList.clear();
-			obsList = observationDao.query(statementBuilder.prepare());
-		} catch (SQLException e) {
-			e.printStackTrace();
+		if (allFlag == true) {
+	    	Dao<Observation, Integer> observationDao = getHelper().getObservationDao();
+	    	QueryBuilder<Observation, Integer> statementBuilder = observationDao.queryBuilder();
+	    	try {
+				statementBuilder.orderBy("item", true);
+				
+				//clear the list and repopulate from db based on criteria 
+				obsList.clear();
+				obsList = observationDao.query(statementBuilder.prepare());
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		observationAdapter listAdapter = new observationAdapter();
@@ -319,18 +488,7 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 
 		allFilterButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	Dao<Observation, Integer> observationDao = getHelper().getObservationDao();
-            	QueryBuilder<Observation, Integer> statementBuilder = observationDao.queryBuilder();
-            	try {
-					statementBuilder.orderBy("item", true);
-					
-					//clear the list and repopulate from db based on criteria 
-					obsList.clear();
-					obsList = observationDao.query(statementBuilder.prepare());
-					setupListView();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
+            	allFlag = true;
 				setupListView();
             }
         });
@@ -344,6 +502,7 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 					//clear the list and repopulate from db based on criteria 
 					obsList.clear();
 					obsList = observationDao.query(statementBuilder.prepare());
+					allFlag = false;
 					setupListView();
 				} catch (SQLException e) {
 					e.printStackTrace();
@@ -359,6 +518,7 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 					
 					obsList.clear();
 					obsList = observationDao.query(statementBuilder.prepare());
+					allFlag = false;
 					setupListView();
 				} catch (SQLException e) {
 					e.printStackTrace();
@@ -374,6 +534,7 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 
 					obsList.clear();
 					obsList = observationDao.query(statementBuilder.prepare());
+					allFlag = false;
 					setupListView();
 				} catch (SQLException e) {
 					e.printStackTrace();
@@ -382,23 +543,13 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
         });
 		backButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+            	setupCloudView();
             	changeVis(R.id.observations_cloud_view);
             	}
         });
 		
 	}
 
-//********************************************************************************************
-	private void setupChosenItemView() {
-		Button chosenItemBackButton = (Button) findViewById(R.id.chosen_item_back_button);
-		chosenItemBackButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            	changeVis(R.id.observations_cloud_view);
-            	}
-        });
-	}
-	
-	
 	
 //********************************************************************************************	
 	private void setupDetailsView() {
@@ -440,12 +591,54 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
         findViewById(R.id.observations_cloud_view).setVisibility(View.GONE);
     	findViewById(R.id.observations_new_observation_view).setVisibility(View.GONE);
         findViewById(R.id.observations_list_view).setVisibility(View.GONE);
-        findViewById(R.id.observations_chosen_item_view).setVisibility(View.GONE);
         findViewById(R.id.observations_details_view).setVisibility(View.GONE);
         findViewById(vis).setVisibility(View.VISIBLE);
 	}
 
+    private int getFontSizeIncrementer(String s) {
+    	Dao<Observation, Integer> observationDao = getHelper().getObservationDao();
+    	QueryBuilder<Observation, Integer> statementBuilder = observationDao.queryBuilder();
+    	try {
+			statementBuilder.orderBy("item", true).where().eq("item", s);
+			 
+			obsList.clear();
+			obsList = observationDao.query(statementBuilder.prepare());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		int fontSize = obsList.size();
+		
+		if (fontSize == 0) {
+			return 0;
+		}
+		else {
+			if (fontSize  > 6) {
+				return (12 + 6*6);				
+			}
+			else {
+				return (12 + obsList.size()*6);
+			}
+		}
+	}
 	
+    private void updateList(String s) {
+    	Dao<Observation, Integer> observationDao = getHelper().getObservationDao();
+    	QueryBuilder<Observation, Integer> statementBuilder = observationDao.queryBuilder();
+    	try {
+			statementBuilder.orderBy("item", true).where().eq("item", s);
+			
+			//clear the list and repopulate from db based on criteria 
+			obsList.clear();
+			obsList = observationDao.query(statementBuilder.prepare());
+			allFlag = false;
+			setupListView();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+    }
+
+
 	class observationAdapter extends ArrayAdapter<Observation> {
 		observationAdapter() {
 			super(ObservationsActivity.this, R.layout.row, obsList);
