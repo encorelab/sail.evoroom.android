@@ -89,15 +89,6 @@ public class FieldGuideActivity extends Activity {
             	changeVis(R.id.field_guide_species_selector);
             }
         });
-		Button allButton = (Button) findViewById(R.id.allButton);
-		allButton.setText(Html.fromHtml("<b>All areas</b>"));
-		allButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            	areaSelectorFlag = 7;
-                setupSpeciesSelectorView();
-            	changeVis(R.id.field_guide_species_selector);
-            	}
-        });
 	}
 
 //**********************************************************************************************
@@ -111,7 +102,7 @@ public class FieldGuideActivity extends Activity {
 
 		// in future we might want to use a custom LayoutInflator here (see junked code at the bottom). This stuff is not dynamic/large enough to warrent it		
 		ImageView image = (ImageView) findViewById(R.id.speciesSelector);   // generic layout, set to correct image during if loop below
-		Button f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14;   // invisible buttons overlaying the image
+		Button f1, f2, f3, f4, f5, f6, f7, f8, f9; 				  // invisible buttons overlaying the image
 		f1 = (Button) findViewById(R.id.f1);									// not all buttons used for each image
 		f2 = (Button) findViewById(R.id.f2);
 		f3 = (Button) findViewById(R.id.f3);
@@ -121,11 +112,6 @@ public class FieldGuideActivity extends Activity {
 		f7 = (Button) findViewById(R.id.f7);
 		f8 = (Button) findViewById(R.id.f8);
 		f9 = (Button) findViewById(R.id.f9);
-		f10 = (Button) findViewById(R.id.f10);
-		f11 = (Button) findViewById(R.id.f11);
-		f12 = (Button) findViewById(R.id.f12);
-		f13 = (Button) findViewById(R.id.f13);
-		f14 = (Button) findViewById(R.id.f14);
 		
 		f1.setVisibility(View.GONE);
 		f2.setVisibility(View.GONE);
@@ -136,14 +122,9 @@ public class FieldGuideActivity extends Activity {
 		f7.setVisibility(View.GONE);
 		f8.setVisibility(View.GONE);
 		f9.setVisibility(View.GONE);
-		f10.setVisibility(View.GONE);
-		f11.setVisibility(View.GONE);
-		f12.setVisibility(View.GONE);
-		f13.setVisibility(View.GONE);
-		f14.setVisibility(View.GONE);
 
 		if (areaSelectorFlag == 1) {
-	        image.setImageDrawable(getResources().getDrawable(R.drawable.area_box_sundaland_plant));
+	        image.setImageDrawable(getResources().getDrawable(R.drawable.sundaland_plant));
 			f1.setVisibility(View.VISIBLE);
 			f2.setVisibility(View.VISIBLE);
 			f3.setVisibility(View.VISIBLE);
@@ -187,7 +168,7 @@ public class FieldGuideActivity extends Activity {
 
 		}
 		else if (areaSelectorFlag == 2) {
-			image.setImageDrawable(getResources().getDrawable(R.drawable.area_box_sundaland_animal));
+			image.setImageDrawable(getResources().getDrawable(R.drawable.sundaland_animal));
 			f1.setVisibility(View.VISIBLE);
 			f2.setVisibility(View.VISIBLE);
 			f3.setVisibility(View.VISIBLE);
@@ -263,7 +244,7 @@ public class FieldGuideActivity extends Activity {
 	        });
 		}
 		else if (areaSelectorFlag == 3) {
-			image.setImageDrawable(getResources().getDrawable(R.drawable.area_box_borneo_plant));
+			image.setImageDrawable(getResources().getDrawable(R.drawable.borneo_plant));
 			f1.setVisibility(View.VISIBLE);
 			f2.setVisibility(View.VISIBLE);
 			f3.setVisibility(View.VISIBLE);
@@ -290,7 +271,7 @@ public class FieldGuideActivity extends Activity {
 	        });
 		}
 		else if (areaSelectorFlag == 4) {
-			image.setImageDrawable(getResources().getDrawable(R.drawable.area_box_borneo_animal));
+			image.setImageDrawable(getResources().getDrawable(R.drawable.borneo_animal));
 			f1.setVisibility(View.VISIBLE);
 			f2.setVisibility(View.VISIBLE);
 			f3.setVisibility(View.VISIBLE);
@@ -350,7 +331,7 @@ public class FieldGuideActivity extends Activity {
 
 		}
 		else if (areaSelectorFlag == 5) {
-			image.setImageDrawable(getResources().getDrawable(R.drawable.area_box_sumatra_plant));
+			image.setImageDrawable(getResources().getDrawable(R.drawable.sumatra_plant));
 			f1.setVisibility(View.VISIBLE);
 			f2.setVisibility(View.VISIBLE);
 			f3.setVisibility(View.VISIBLE);
@@ -393,7 +374,7 @@ public class FieldGuideActivity extends Activity {
 	        });
 		}
 		else if (areaSelectorFlag == 6) {
-			image.setImageDrawable(getResources().getDrawable(R.drawable.area_box_sumatra_animal));
+			image.setImageDrawable(getResources().getDrawable(R.drawable.sumatra_animal));
 			f1.setVisibility(View.VISIBLE);
 			f2.setVisibility(View.VISIBLE);
 			f3.setVisibility(View.VISIBLE);
@@ -401,6 +382,7 @@ public class FieldGuideActivity extends Activity {
 			f5.setVisibility(View.VISIBLE);
 			f6.setVisibility(View.VISIBLE);
 			f7.setVisibility(View.VISIBLE);
+			f8.setVisibility(View.VISIBLE);
 			f1.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
 	            	speciesSelected = "fig_wasp_sumatra";
@@ -445,14 +427,18 @@ public class FieldGuideActivity extends Activity {
 	        });
 			f7.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
+	            	speciesSelected = "sumatran_tiger";
+	            	setupSpeciesDisplayView();
+	            	changeVis(R.id.field_guide_species_display);
+	            	}
+	        });
+			f8.setOnClickListener(new View.OnClickListener() {
+	            public void onClick(View v) {
 	            	speciesSelected = "sunda_leopard";
 	            	setupSpeciesDisplayView();
 	            	changeVis(R.id.field_guide_species_display);
 	            	}
 	        });
-		}
-		else {
-			image.setImageDrawable(getResources().getDrawable(R.drawable.area_box_all));
 		}
 	}
     
@@ -507,7 +493,7 @@ public class FieldGuideActivity extends Activity {
 			habitatContent.setText("As a parasite it grows on Tetrastigma vine, which grows only in primary (undisturbed) rainforests. It can be found in the jungles of southeast Asia, including the Philippines.");
 			prevalenceContent.setText("");
 			sourcesContent.setText("Wikipedia, Sabah travel guide, Parasitic Plants: Rafflesia arnoldii, Lost World Arts");
-			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.rafflesia_icon));
 		}
 		else if (speciesSelected.equals("tetrastigma")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.tetrastigma));
@@ -518,7 +504,7 @@ public class FieldGuideActivity extends Activity {
 			habitatContent.setText("The species are found in subtropical and tropical regions of Asia, Malesia, and Australia, where they grow in primary rainforest, gallery forest and monsoon forest and moister woodland.");
 			prevalenceContent.setText("");
 			sourcesContent.setText("ZipcodeZoo, Flora of Singapore, Wikipedia");
-			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.tetrastigma_icon));
 		}
 		else if (speciesSelected.equals("strangler_fig")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.strangler_fig));
@@ -529,7 +515,7 @@ public class FieldGuideActivity extends Activity {
 			habitatContent.setText("The Strangler fig lives in the lowland rainforest of Borneo.");
 			prevalenceContent.setText("");
 			sourcesContent.setText("Wikipedia, Mongabay");
-			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.strangler_fig_icon));
 		}
 		else if (speciesSelected.equals("amorphophallus_titanum")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.titan_arum));
@@ -540,7 +526,7 @@ public class FieldGuideActivity extends Activity {
 			habitatContent.setText("The Amorphophallus titanum is found in the rainforests of western Sumatra.");
 			prevalenceContent.setText("");
 			sourcesContent.setText("Virtual Herbarium");
-			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.titan_arum_icon));
 		}
 		else if (speciesSelected.equals("ficus_benjamina")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.benjamin_fig));
@@ -551,18 +537,18 @@ public class FieldGuideActivity extends Activity {
 			habitatContent.setText("This ficus is located in the southeast Asia forest.");
 			prevalenceContent.setText("");
 			sourcesContent.setText("ZipcodeZoo, Wikipedia");
-			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.benjamin_fig_icon));
 		}
 		else if (speciesSelected.equals("ficus_microcarpa")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.curtain_fig));
-			commonNameContent.setText("Curtain fig, Indian laurel fig, laurel fig, Malay banyan");
+			commonNameContent.setText("Curtain fig, Indian laurel fig, Malay banyan, laurel fig");
 			scientificNameContent.setText("Ficus microcarpa");
 			familyContent.setText("Moraceae");
 			descriptionContent.setText("The Ficus microcarpa is very attractive to avian wildlife. Its fruit and leaves are also sought after and eaten by the parrot Aratinga leucophthalmus. Although invasive, its hardiness makes it an important species for the attraction of avian wildlife in urban environments. It is pollinated by the fig wasp, Eupristina verticillata.");
 			habitatContent.setText("This ficus is found in Sumatra rainforest.");
 			prevalenceContent.setText("");
 			sourcesContent.setText("United States Dept. of Agriculture, Ficus images, Wikipedia, Neotropical Entomology");
-			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.curtain_fig_icon));
 		}
 //************************************************************************************************
 		else if (speciesSelected.equals("striped_rabbit")) {
@@ -573,7 +559,7 @@ public class FieldGuideActivity extends Activity {
 			descriptionContent.setText("The Sumatran Striped Rabbit is usually about 40 cm (1 ft, 4 in) long. It is gray with brown stripes, with a red tail and rump, and the underside is white. It is nocturnal, resting in the burrows of other animals. It usually eats the stalk and leaves of understory plants, but captive rabbits ate grain, and tropical fruits. It is relatively unknown as it isn't seen often.");
 			habitatContent.setText("It lives in forests along the mountainous edges of Sumatr, at altitudes of 600-1400 metres.");
 			prevalenceContent.setText("It is critically endangered because of loss of habitat.");
-			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.rabbit_icon));
 		}
 		else if (speciesSelected.equals("leaf_monkey")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.mitered_leaf_monkey));
@@ -584,7 +570,7 @@ public class FieldGuideActivity extends Activity {
 			habitatContent.setText("This species lives in primary lowland rainforests, hill forests, inland secondary forests, and submontane forests.");
 			prevalenceContent.setText("The species is considered Endangered due to ongoing population declines driven by habitat conversion and illegal collecting for the pet trade. Although forest loss has probably exceeded 70% over 3 generations (30 years approximately), the subspecies is tolerant to some degree of conversion such that it is likely to persist in fragmented landscapes over the medium term.");
 			sourcesContent.setText("Primata");
-			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.mitered_leaf_monkey_icon));
 		}
 		else if (speciesSelected.equals("malayan_tapir")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.tapir));
@@ -594,7 +580,7 @@ public class FieldGuideActivity extends Activity {
 			descriptionContent.setText("Also known as the Asian Tapir, the Malayan Tapir (Tapirus indicus) is the largest of the four species of tapir and the only one native to Asia. In the Malay language, the tapir is commonly referred to as \"cipan\", \"tenuk\" or \"badak tampong\". It has notable markings of a light colored patch which extends from its shoulders to its rear. The the rest of its hair is black and tips of ears white; The pattern is for camouflage. It grows to 1.8 to 2.4 meters in length and stands 90 to 107 cm tall. The females are larger than males. They have poor eyesight but excellent sense of small. They communicate with high-pitched squeaks and whistles. They are active at night, eating as soon after sunset or before sunrise.");
 			habitatContent.setText("Found in lowland rainforests. They live near water so they can bathe and swim often. They can also climb steep slopes of their habitat.");
 			prevalenceContent.setText("The deforestation for agricultural purposes and the damming of rivers for hydroelectric projects have caused flooding of habitat for the tapir.");
-			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.tapir_icon));
 		}
 		else if (speciesSelected.equals("sumatran_orangutan")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.sumatran_orangutan));
@@ -605,7 +591,7 @@ public class FieldGuideActivity extends Activity {
 			habitatContent.setText("Lives in rainforest and swamps of Sumatra in the Suaq Balimbing swamp. These organutans are the largest of the tree-dwelling primates.");
 			prevalenceContent.setText("There are 7,300 Sumatran organutans that still live in the wild and they are critically endangered. There are no more than 6-7 orangutan's per square kilometer.");
 			sourcesContent.setText("Wikipedia, Nature wildlife, Sumatra Orangutan Chapter 2, Know your Orangutan, Primatology");
-			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.sumatran_orangutan_icon));
 		}
 		else if (speciesSelected.equals("sunda_leopard")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.clouded_leopard));
@@ -616,18 +602,18 @@ public class FieldGuideActivity extends Activity {
 			habitatContent.setText("Sunda clouded leopards are largely unknown because of their secretive nature. In Borneo, they occur in lowland rainforest, and at lower density, in logged forest. Records in Borneo are below 1,500 m (4,900 ft). In Sumatra, they appear to be more abundant in hilly, montain areas. It is unknown if there are still Sunda clouded leopards on the small Batu Islands close to Sumatra.");
 			prevalenceContent.setText("In 2008, the IUCN classified the species as vulnerable, with a total effective population size suspected to be fewer than 10,000 mature individuals, and a decreasing population trend.");
 			sourcesContent.setText("New Species Declared: Clouded Leopard found on Borneo and Sumatra, Wikipedia");
-			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.clouded_leopard_icon));
 		}
 		else if (speciesSelected.equals("sumatran_rhino")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.sumatran_rhino));
 			commonNameContent.setText("Sumatran rhinoceros");
 			scientificNameContent.setText("Dicerorhinus sumatrensis");
 			familyContent.setText("Rhinocerotidae");
-			descriptionContent.setText("The Sumatran rhino lives an estimated 30-45 years in the wild. They are the most vocal of the rhinoceros species as they produce a whistle blowing sound, but the vocalization has unknown purpose. They are solitary creatures except when pairing prior to mating and during child rearing. They are most active when eating at dawn or just after dusk, loves to wallow in mud baths to cool down and rest. In rainy seasons, the rhinos will move to higher elevations and in cooler months in the lower areas. The Sumatran Rhinos are fast and agile; they climb mountains easily and comfortably traverses steep slopes and riverbanks.");
+			descriptionContent.setText("The Sumatran rhino lives an estimated 30-45 years in the wild. They are the most vocal of the rhinoceros species as they produce a whistle blowing sound, but the vocalization has unknown purpose. They are solitary creatures except when pairing prior to mating and during child rearing. They are most active when eating at dawn or just after dusk, loves to wallow in mud baths to cool down and rest. In rainy seasons, the rhinos will move to higher elevations and in cooler months in the lower areas. The Sumatran Rhinos are fast and agile; they climb mountains easily and comfortably traverse steep slopes and riverbanks.");
 			habitatContent.setText("Sumatran Rhinos live in both lowland and highland secondary rainforest, swamps and the cloud forest. They prefer hilly areas close to water, particularly steep upper valleys with a lot of undergrowth. Known to be in Sumatra, Sabah and Borneo (used to live more places; only six known communities contain Sumatran Rhinos).");
 			prevalenceContent.setText("Fewer than 275 individuals remain and seen as critically endangered primarily due to illegal poaching and habitat loss due to hardwood production from the rainforests. The rhino horns are used in amulets for protection and is seen as an aphrodisiac. Although traditional Chinese medicine never used it for this purpose.");
 			sourcesContent.setText("Wikipedia");
-			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.sumatran_rhino_icon));
 		}
 		else if (speciesSelected.equals("sumatran_tiger")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.sumatran_tiger));
@@ -638,7 +624,7 @@ public class FieldGuideActivity extends Activity {
 			habitatContent.setText("Only found in Sumatra, which provides a varying landscape in which this tiger lives. From peat-moss forest, submountain and mountain forest as well as lowland forest. The agriculture of Sumatra has changed and thus caused problems for the tigers.");
 			prevalenceContent.setText("There are no more than 500 tigers left in the wild due to the continual loss of habitat. The deforestation from the production of palm oil and agricultural growth has made habitat for tigers fragmented. There are no more than 500 tigers left in the wild.");
 			sourcesContent.setText("Wikipedia, Tiger Homes");
-			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.sumatran_tiger_icon));
 		}
 		else if (speciesSelected.equals("fig_wasp_sumatra")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.fig_wasp2));
@@ -647,7 +633,7 @@ public class FieldGuideActivity extends Activity {
 			familyContent.setText("Agaonidae");
 			descriptionContent.setText("Also known as the Chinese banyan pollinator wasp, the Eupristina verticillata is a sub species of fig wasps in from the Agaonidae family. They pollinate figs or are otherwise associated with figs in a coevolutional relationship that has been developing for at least 80 million years.");
 			sourcesContent.setText("Bugs in the news, Wikipedia");
-			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.sumatran_fig_wasp_icon));
 		}
 		else if (speciesSelected.equals("fig_wasp_borneo")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.fig_wasp1));
@@ -658,7 +644,7 @@ public class FieldGuideActivity extends Activity {
 			habitatContent.setText("Tropical and subtropical areas");
 			prevalenceContent.setText("");
 			sourcesContent.setText("Figweb, Wikipedia, Figs and Wasps, Fig wasps and their Figs");
-			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.bornean_fig_wasp_icon));
 		}
 		else if (speciesSelected.equals("rhino_hornbill")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.rhinoceros_hornbill));
@@ -669,7 +655,7 @@ public class FieldGuideActivity extends Activity {
 			habitatContent.setText("The rhinoceros hornbill lives in captivity for up to 35 years. It is found in only the highest form of rain forest. This bird lives in the Malay Peninsula, Singapore, Sumatra, Java, and Borneo.");
 			prevalenceContent.setText("This species is near threat due to habitat distruction.");
 			sourcesContent.setText("Wikipedia");
-			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.rhinoceros_hornbill_icon));
 		}
 		else if (speciesSelected.equals("helmeted_hornbill")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.helmeted_hornbill));
@@ -680,18 +666,18 @@ public class FieldGuideActivity extends Activity {
 			habitatContent.setText("The helmeted hornbills are found in the forests of Borneo.");
 			prevalenceContent.setText("The helmeted hornbill is evaluated as near threatened on the IUCN Red List due to hunting and loss of habitat.");
 			sourcesContent.setText("");
-			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.helmeted_hornbill_icon));
 		}
 		else if (speciesSelected.equals("grey_hornbill")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.malabar_grey_hornbill));
-			commonNameContent.setText("Grey hornbill");
+			commonNameContent.setText("Malabar grey hornbill");
 			scientificNameContent.setText("Ocyceros griseus");
 			familyContent.setText("Bucerotidae");
 			descriptionContent.setText("Hornbills are a family of bird found in tropical and subtropical Africa, Asia and Melanesia. They are characterized by a long, down-curved bill which is frequently brightly-colored and sometimes has a casque on the upper mandible. The plumage of hornbills is typically black, grey, white, or brown, although typically offset by bright colours on the bill, or patches of bare coloured skin on the face or wattles. Hornbills are the only birds in which the first two neck vertebrae (the axis and atlas) are fused together; this probably provides a more stable platform for carrying the bill. Both the common English and the scientific name of the family refer to the shape of the bill, \"buceros\" being \"cow horn\" in Greek. The family is omnivorous, feeding on fruit and small animals. They are monogamous breeders nesting in natural cavities in trees and sometimes cliffs. Males are always bigger than the females seen in the wing size. The heavy bill supported by a powerful neck muscles and fused vertebrae is a distinctive feature. The large bill assists in fighting, preening, and constructing the nest, as well as catching prey.");
 			habitatContent.setText("The hornbills can be found in the dense forests of Bornea.");
 			prevalenceContent.setText("Many Asian species of hornbill are threatened with extinction due to hunting and habitat loss, as they tend to require primary forest.");
 			sourcesContent.setText("");
-			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.malabar_grey_hornbill_icon));
 		}
 		else if (speciesSelected.equals("proboscis_monkey")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.proboscis_monkey));
@@ -702,7 +688,7 @@ public class FieldGuideActivity extends Activity {
 			habitatContent.setText("The Proboscis monkey is endemic to Borneo's low elevation mangrove forests, swamps, and lowland riparian forests. One of the largest populations is found in the Danau Sentarum National Park. It lives in small groups of 10 to 32 animals. Group membership is very flexible, and animals are known to move from group to group quite often.");
 			prevalenceContent.setText("The Proboscis monkey is assessed as endangered and its total population has decreased by more than 50% in the 36-40 years to 2008 due to ongoing habitat loss and hunting in some areas. Much of the population is fragmented.");
 			sourcesContent.setText("Wikipedia");
-			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.proboscis_monkey_icon));
 		}
 		else if (speciesSelected.equals("borneo_orangutan")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.borneo_orang));
@@ -713,11 +699,11 @@ public class FieldGuideActivity extends Activity {
 			habitatContent.setText("The Bornean orangutan lives in tropical and subtropical moist broadleaf forests in the Bornean lowlands as well as mountainous areas 1,500 metres (4,900 ft) in elevation. It lives at different heights in the trees and moves large distances to find trees bearing fruit.");
 			prevalenceContent.setText("The Bornean orangutan is more common than the Sumatran, with about 54,500 individuals in the wild. They are an endangered species due to habitat destruction and the bushmeat trade. Young orangutans are also captured and sold as pets leaving their mothers dead in the process. The total number of Bornean orangutans is estimated to be less than 14 percent of what it was in the recent past (from around 10,000 years ago until the middle of the twentieth century).");
 			sourcesContent.setText("Wikipedia, Animal Diversity Web, OrangutansWWF");
-			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.bornean_orangutan_icon));
 		}
 //************************************************************************************************************************
 		else if (speciesSelected.equals("sud_orangutan")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.orangutan_icon));
 			commonNameContent.setText("Orangutan");
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
@@ -732,7 +718,7 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setVisibility(View.GONE);
 		}
 		else if (speciesSelected.equals("sud_leopard")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.clouded_leopard_icon));
 			commonNameContent.setText("Clouded leopard");
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
@@ -747,7 +733,7 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setVisibility(View.GONE);
 		}
 		else if (speciesSelected.equals("sud_fig_wasp")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.sundaland_fig_wasp_icon));
 			commonNameContent.setText("Fig wasp");
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
@@ -761,7 +747,7 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setVisibility(View.GONE);
 		}
 		else if (speciesSelected.equals("sud_proboscis_monkey")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.proboscis_monkey_icon));
 			commonNameContent.setText("Proboscis monkey");
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
@@ -776,7 +762,7 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setVisibility(View.GONE);
 		}
 		else if (speciesSelected.equals("sud_hornbill")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.rhinoceros_hornbill_icon));
 			commonNameContent.setText("Hornbill");
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
@@ -791,7 +777,7 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setVisibility(View.GONE);
 		}
 		else if (speciesSelected.equals("sud_tiger")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.tiger_icon));
 			commonNameContent.setText("Tiger");
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
@@ -806,7 +792,7 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setVisibility(View.GONE);
 		}
 		else if (speciesSelected.equals("sud_rhino")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.sumatran_rhino_icon));
 			commonNameContent.setText("Rhinoceros");
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
@@ -820,7 +806,7 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setVisibility(View.GONE);
 		}
 		else if (speciesSelected.equals("sud_tapir")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.tapir_icon));
 			commonNameContent.setText("Tapir");
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
@@ -834,7 +820,7 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setVisibility(View.GONE);
 		}
 		else if (speciesSelected.equals("sud_rabbit")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.rabbit_icon));
 			commonNameContent.setText("Rabbit");
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
@@ -849,7 +835,7 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setVisibility(View.GONE);
 		}
 		else if (speciesSelected.equals("sud_rafflesia")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.rafflesia_icon));
 			commonNameContent.setText("Rafflesia");
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
@@ -864,7 +850,7 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setVisibility(View.GONE);
 		}
 		else if (speciesSelected.equals("sud_strangler_fig")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.strangler_fig_icon));
 			commonNameContent.setText("Strangler fig");
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
@@ -879,7 +865,7 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setVisibility(View.GONE);
 		}
 		else if (speciesSelected.equals("sud_tetrastigma")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.tetrastigma_icon));
 			commonNameContent.setText("Tetrastigma");
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
@@ -894,7 +880,7 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setVisibility(View.GONE);
 		}
 		else if (speciesSelected.equals("sud_curtain_fig")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.curtain_fig_icon));
 			commonNameContent.setText("Curtain fig");
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
@@ -909,7 +895,7 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setVisibility(View.GONE);
 		}
 		else if (speciesSelected.equals("sud_titan_arum")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.drawn_sumatran_rabbit));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.titan_arum_icon));
 			commonNameContent.setText("Titan arum");
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);

@@ -21,11 +21,42 @@
     	android:layout_width="wrap_content" android:layout_height="wrap_content"		
 		android:layout_below="@id/cloud_flora_text"
 		android:layout_marginTop="60sp" android:layout_marginLeft="80sp"/>
-	<Button android:id="@+id/test_btn" android:text="test"
+	<Button android:id="@+id/fauna_fig_btn" android:text="Fig tree"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_below="@id/cloud_flora_text" android:layout_marginTop="290sp"
+		android:layout_alignLeft="@id/cloud_fauna_text" android:layout_marginLeft="130sp"
+		android:background="#000000" android:textColor="#F2F2F2"
+		android:textSize="20sp" />
+	<Button android:id="@+id/fauna_tetra_btn" android:text="Tetrastigma"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
 		android:layout_below="@id/cloud_flora_text" android:layout_marginTop="190sp"
 		android:layout_alignLeft="@id/cloud_fauna_text" android:layout_marginLeft="30sp"
-		android:background="#000000" android:textColor="#F2F2F2" />
+		android:background="#000000" android:textColor="#F2F2F2" 
+		android:textSize="20sp"/>
+	<Button android:id="@+id/fauna_raffl_btn" android:text="Rafflesia"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_below="@id/cloud_flora_text" android:layout_marginTop="160sp"
+		android:layout_alignLeft="@id/cloud_fauna_text" android:layout_marginLeft="330sp"
+		android:background="#000000" android:textColor="#F2F2F2"
+		android:textSize="20sp" />
+	<Button android:id="@+id/fauna_titan_btn" android:text="Titan arum"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_below="@id/cloud_flora_text" android:layout_marginTop="325sp"
+		android:layout_alignLeft="@id/cloud_fauna_text" android:layout_marginLeft="400sp"
+		android:background="#000000" android:textColor="#F2F2F2"
+		android:textSize="20sp" />
+	<Button android:id="@+id/fauna_envir_btn" android:text="Environment"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_below="@id/cloud_flora_text" android:layout_marginTop="250sp"
+		android:layout_alignLeft="@id/cloud_fauna_text" android:layout_marginLeft="300sp"
+		android:background="#000000" android:textColor="#F2F2F2"
+		android:textSize="20sp" />
+	<Button android:id="@+id/fauna_other_btn" android:text="Other"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_below="@id/cloud_flora_text" android:layout_marginTop="120sp"
+		android:layout_alignLeft="@id/cloud_fauna_text" android:layout_marginLeft="150sp"
+		android:background="#000000" android:textColor="#F2F2F2"
+		android:textSize="20sp" />
 	
     <Button android:id="@+id/add_observation_button" android:background="@drawable/add_an_observation"
     	android:layout_width="wrap_content" android:layout_height="wrap_content"

@@ -3,7 +3,6 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent" android:layout_height="match_parent"
   android:orientation="vertical" android:paddingTop="150sp">
-
  
   	<ImageView android:layout_width="4in" android:layout_height="0.763in"
 		android:src="@drawable/choose_an_area_box_4in" android:layout_gravity="center" />
@@ -50,14 +49,6 @@
 	<ImageView android:layout_width="4in" android:layout_height="0.013in"
 		android:layout_gravity="center" android:src="@drawable/dotted_line_4in" />
 	<Button android:id="@+id/sumatraFaunaButton" android:layout_width="4in"
-		android:layout_height="80sp" android:layout_gravity="center"
-		android:paddingRight="40sp" android:paddingTop="15sp"
-		android:paddingLeft="40sp" android:gravity="left" android:background="#FFFFFF"
-		android:textColor="#000000" android:textSize="20sp"
-		android:drawableRight="@drawable/arrow_btn" />
-	<ImageView android:layout_width="4in" android:layout_height="0.013in"
-		android:layout_gravity="center" android:src="@drawable/dotted_line_4in" />
-	<Button android:id="@+id/allButton" android:layout_width="4in"
 		android:layout_height="80sp" android:layout_gravity="center"
 		android:paddingRight="40sp" android:paddingTop="15sp"
 		android:paddingLeft="40sp" android:gravity="left" android:background="#FFFFFF"

@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
-import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
+//import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.stmt.QueryBuilder;
-import com.j256.ormlite.support.ConnectionSource;
-import com.j256.ormlite.table.TableUtils;
+//import com.j256.ormlite.support.ConnectionSource;
+//import com.j256.ormlite.table.TableUtils;
 
 import android.os.Bundle;
 import android.view.Gravity;
@@ -58,13 +58,31 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
         setupCloudView();
         setupNewObservationView();
         setupListView();
+        setupChosenItemView();
         setupDetailsView();
 	}
 
-	
+//*************************************************************************************	
 	private void setupCloudView() {
 		Button viewObservationsButton = (Button) findViewById(R.id.view_observations_button);
 		Button addObservationButton = (Button) findViewById(R.id.add_observation_button);
+		Button faunaTetraButton, faunaFigButton, faunaRafflButton, faunaTitanButton, faunaEnvirButton, faunaOtherButton;
+		faunaFigButton = (Button) findViewById(R.id.fauna_fig_btn);
+		faunaTetraButton = (Button) findViewById(R.id.fauna_tetra_btn);
+		faunaRafflButton = (Button) findViewById(R.id.fauna_raffl_btn);
+		faunaTitanButton = (Button) findViewById(R.id.fauna_titan_btn);
+		faunaEnvirButton = (Button) findViewById(R.id.fauna_envir_btn);
+		faunaOtherButton = (Button) findViewById(R.id.fauna_other_btn);
+
+		/*something like:
+		 * set the default slightly smaller?
+		 * int adder = 5;
+		 * for every hit in db returns list
+		 * list count * adder = new text size;
+		 * 
+		 * PUT THIS IN ITS OWN FUCNTION
+		 */
+		
         viewObservationsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	changeVis(R.id.observations_list_view);
@@ -75,13 +93,39 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
             	changeVis(R.id.observations_new_observation_view);
             }
         });
-		
-        Button linkButton1 = (Button) findViewById(R.id.test_btn);
-        linkButton1.setOnClickListener(new View.OnClickListener() {
+        faunaFigButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	changeVis(R.id.observations_new_observation_view);
+            	changeVis(R.id.observations_chosen_item_view);
             }
         });
+        faunaTetraButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	changeVis(R.id.observations_chosen_item_view);
+            }
+        });
+        faunaRafflButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	changeVis(R.id.observations_chosen_item_view);
+            }
+        });
+        faunaTitanButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	changeVis(R.id.observations_chosen_item_view);
+            }
+        });
+        faunaEnvirButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	changeVis(R.id.observations_chosen_item_view);
+            }
+        });
+        faunaOtherButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	changeVis(R.id.observations_chosen_item_view);
+            }
+        });
+
+
+
 
 	}
 
@@ -201,14 +245,7 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
             		}
             		boxChecked = true;
             	}
-
             	
-//            	String itemText = (String) itemPicker.getSelectedItem();
-//            	String areaText = (String) areaPicker.getSelectedItem();
-//            	String obsText = observationText.getText().toString();
-//            	String tagsText = "";
-
-
             	if (!obsText.equals("") && boxChecked == true) {
             	
 	            	obs.setObservationData(itemText, areaText, obsText, tagsText);
@@ -340,7 +377,18 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 	}
 
 //********************************************************************************************
+	private void setupChosenItemView() {
+		Button chosenItemBackButton = (Button) findViewById(R.id.chosen_item_back_button);
+		chosenItemBackButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	changeVis(R.id.observations_cloud_view);
+            	}
+        });
+	}
 	
+	
+	
+//********************************************************************************************	
 	private void setupDetailsView() {
 		Button detailsBackButton = (Button) findViewById(R.id.details_back_button);
 		detailsBackButton.setOnClickListener(new View.OnClickListener() {
@@ -380,6 +428,7 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
         findViewById(R.id.observations_cloud_view).setVisibility(View.GONE);
     	findViewById(R.id.observations_new_observation_view).setVisibility(View.GONE);
         findViewById(R.id.observations_list_view).setVisibility(View.GONE);
+        findViewById(R.id.observations_chosen_item_view).setVisibility(View.GONE);
         findViewById(R.id.observations_details_view).setVisibility(View.GONE);
         findViewById(vis).setVisibility(View.VISIBLE);
 	}
