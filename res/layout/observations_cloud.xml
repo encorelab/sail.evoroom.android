@@ -49,18 +49,18 @@
 		android:background="#000000" android:textColor="#F2F2F2" android:visibility="gone" />
 	<Button android:id="@+id/fauna_rabbit_btn" android:text="Rabbit"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
-		android:layout_below="@id/cloud_flora_heading" android:layout_marginTop="30sp"
-		android:layout_alignLeft="@id/cloud_fauna_text" android:layout_marginLeft="460sp"
+		android:layout_below="@id/cloud_flora_heading" android:layout_marginTop="15sp"
+		android:layout_alignLeft="@id/cloud_fauna_text" android:layout_marginLeft="430sp"
 		android:background="#000000" android:textColor="#F2F2F2" android:visibility="gone" />
-	<Button android:id="@+id/fauna_rhino_btn" android:text="Rhino"
+	<Button android:id="@+id/fauna_rhino_btn" android:text="Rhinoceros"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
-		android:layout_below="@id/cloud_flora_heading" android:layout_marginTop="70sp"
+		android:layout_below="@id/cloud_flora_heading" android:layout_marginTop="90sp"
 		android:layout_alignLeft="@id/cloud_fauna_text" android:layout_marginLeft="230sp"
 		android:background="#000000" android:textColor="#F2F2F2" android:visibility="gone" />
 	<Button android:id="@+id/fauna_tapir_btn" android:text="Tapir"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
 		android:layout_below="@id/cloud_flora_heading" android:layout_marginTop="150sp"
-		android:layout_alignLeft="@id/cloud_fauna_text" android:layout_marginLeft="440sp"
+		android:layout_alignLeft="@id/cloud_fauna_text" android:layout_marginLeft="420sp"
 		android:background="#000000" android:textColor="#F2F2F2" android:visibility="gone" />
 	<Button android:id="@+id/fauna_tiger_btn" android:text="Tiger"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
@@ -86,7 +86,7 @@
 	<Button android:id="@+id/flora_titan_btn" android:text="Titan arum"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
 		android:layout_below="@id/cloud_flora_text" android:layout_marginTop="325sp"
-		android:layout_alignLeft="@id/cloud_fauna_text" android:layout_marginLeft="400sp"
+		android:layout_alignLeft="@id/cloud_fauna_text" android:layout_marginLeft="350sp"
 		android:background="#000000" android:textColor="#F2F2F2" android:visibility="gone" />
 	<Button android:id="@+id/flora_envir_btn" android:text="Environment"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"

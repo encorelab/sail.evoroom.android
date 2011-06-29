@@ -16,6 +16,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -438,6 +439,7 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 					check7.setChecked(false);
 					check8.setChecked(false);
 					check9.setChecked(false);
+					allFlag = true;
 					setupListView();
 	            	changeVis(R.id.observations_list_view);
             	}
@@ -613,11 +615,11 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 			return 0;
 		}
 		else {
-			if (fontSize  > 6) {
-				return (12 + 6*6);				
+			if (fontSize  > 5) {
+				return (12 + 5*5);				
 			}
 			else {
-				return (12 + obsList.size()*6);
+				return (12 + obsList.size()*5);
 			}
 		}
 	}
