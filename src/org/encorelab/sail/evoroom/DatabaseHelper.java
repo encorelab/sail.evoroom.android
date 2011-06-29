@@ -21,7 +21,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	// any time you make changes to your database objects, you may have to increase the database version
 	// you can't go backwards in version
 	// this must also be ++ed whenever you alter the structure of the object
-	private static final int DATABASE_VERSION = 4;
+	private static final int DATABASE_VERSION = 1;
 
 	// the DAO object we use to access the table
 	private Dao<Observation, Integer> observationDao = null;

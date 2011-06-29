@@ -257,7 +257,7 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 						e.printStackTrace();
 					}
 	
-					//adds the obs to the array adapter
+					//adds the obs to the array adapter, may not be necessary
 					obsList.add(obs);
 					
 					//clear everything and change views
@@ -301,6 +301,18 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 		Button backButton = (Button) findViewById(R.id.list_back_button);
 		ListView listOfObservations = (ListView) findViewById(R.id.list_of_observations);
 
+    	Dao<Observation, Integer> observationDao = getHelper().getObservationDao();
+    	QueryBuilder<Observation, Integer> statementBuilder = observationDao.queryBuilder();
+    	try {
+			statementBuilder.orderBy("item", true);
+			
+			//clear the list and repopulate from db based on criteria 
+			obsList.clear();
+			obsList = observationDao.query(statementBuilder.prepare());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 		observationAdapter listAdapter = new observationAdapter();
 		listOfObservations.setAdapter(listAdapter);
 		listOfObservations.setOnItemClickListener(onListClick);
@@ -405,13 +417,13 @@ public class ObservationsActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 		//this check is for the first pass in onCreate, where the object is null
 		if (currentObs != null) {
 	
-			if (currentObs.getArea() == "Sundaland") {
+			if (currentObs.getArea().equals("Sundaland")) {
 				detailsAreaImage.setImageDrawable(getResources().getDrawable(R.drawable.sud_tag));
 			}
-			else if (currentObs.getArea() == "Borneo") {
+			else if (currentObs.getArea().equals("Borneo")) {
 				detailsAreaImage.setImageDrawable(getResources().getDrawable(R.drawable.bor_tag));
 			}
-			else {
+			else if (currentObs.getArea().equals("Sumatra")) {
 				detailsAreaImage.setImageDrawable(getResources().getDrawable(R.drawable.sum_tag));
 			}
 			detailsTitle.setText(currentObs.getItem());

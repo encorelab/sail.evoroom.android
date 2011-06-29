@@ -2,7 +2,7 @@
 <resources>
 	<string name="item_prompt">Choose an item</string>
 	<string-array name="items">
-        <item>Clouded Leopard</item>
+        <item>Clouded leopard</item>
 		<item>Fig wasp</item>
 		<item>Hornbill</item>
 		<item>Monkey</item>
@@ -11,10 +11,10 @@
 		<item>Rhinoceros</item>
 		<item>Tapir</item>
 		<item>Tiger</item>
-		<item>Fig/Ficus</item>
-		<item>Grape Vine/Tetrastigma</item>
-		<item>Red Corpse Flower/Rafflesia</item>
-		<item>Tall Corpse Flower/Titan Arum</item>
+		<item>Fig</item>
+		<item>Tetrastigma</item>
+		<item>Rafflesia</item>
+		<item>Titan arum</item>
 		<item>Environment</item>
 		<item>Other</item>
     </string-array>

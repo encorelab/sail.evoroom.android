@@ -559,7 +559,7 @@ public class FieldGuideActivity extends Activity {
 			descriptionContent.setText("The Sumatran Striped Rabbit is usually about 40 cm (1 ft, 4 in) long. It is gray with brown stripes, with a red tail and rump, and the underside is white. It is nocturnal, resting in the burrows of other animals. It usually eats the stalk and leaves of understory plants, but captive rabbits ate grain, and tropical fruits. It is relatively unknown as it isn't seen often.");
 			habitatContent.setText("It lives in forests along the mountainous edges of Sumatr, at altitudes of 600-1400 metres.");
 			prevalenceContent.setText("It is critically endangered because of loss of habitat.");
-			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.rabbit_icon));
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.striped_rabbit_icon));
 		}
 		else if (speciesSelected.equals("leaf_monkey")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.mitered_leaf_monkey));
@@ -580,7 +580,7 @@ public class FieldGuideActivity extends Activity {
 			descriptionContent.setText("Also known as the Asian Tapir, the Malayan Tapir (Tapirus indicus) is the largest of the four species of tapir and the only one native to Asia. In the Malay language, the tapir is commonly referred to as \"cipan\", \"tenuk\" or \"badak tampong\". It has notable markings of a light colored patch which extends from its shoulders to its rear. The the rest of its hair is black and tips of ears white; The pattern is for camouflage. It grows to 1.8 to 2.4 meters in length and stands 90 to 107 cm tall. The females are larger than males. They have poor eyesight but excellent sense of small. They communicate with high-pitched squeaks and whistles. They are active at night, eating as soon after sunset or before sunrise.");
 			habitatContent.setText("Found in lowland rainforests. They live near water so they can bathe and swim often. They can also climb steep slopes of their habitat.");
 			prevalenceContent.setText("The deforestation for agricultural purposes and the damming of rivers for hydroelectric projects have caused flooding of habitat for the tapir.");
-			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.tapir_icon));
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.malayan_tapir_icon));
 		}
 		else if (speciesSelected.equals("sumatran_orangutan")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.sumatran_orangutan));
@@ -602,7 +602,7 @@ public class FieldGuideActivity extends Activity {
 			habitatContent.setText("Sunda clouded leopards are largely unknown because of their secretive nature. In Borneo, they occur in lowland rainforest, and at lower density, in logged forest. Records in Borneo are below 1,500 m (4,900 ft). In Sumatra, they appear to be more abundant in hilly, montain areas. It is unknown if there are still Sunda clouded leopards on the small Batu Islands close to Sumatra.");
 			prevalenceContent.setText("In 2008, the IUCN classified the species as vulnerable, with a total effective population size suspected to be fewer than 10,000 mature individuals, and a decreasing population trend.");
 			sourcesContent.setText("New Species Declared: Clouded Leopard found on Borneo and Sumatra, Wikipedia");
-			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.clouded_leopard_icon));
+			speciesDrawn.setImageDrawable(getResources().getDrawable(R.drawable.sunda_clouded_leopard_icon));
 		}
 		else if (speciesSelected.equals("sumatran_rhino")) {
 			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.sumatran_rhino));
@@ -708,7 +708,7 @@ public class FieldGuideActivity extends Activity {
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
 			familyField.setText("Genus: ");
-			familyContent.setText("Pongo");
+			familyContent.setText(Html.fromHtml("<i>Pongo</i>"));
 			descriptionContent.setText("Orangutans are the only exclusively Asian genus of extant great ape. The largest living arboreal animals, they have longer arms than the other, more terrestrial, great apes. They are among the most intelligent primates and use a variety of sophisticated tools, also making sleeping nests each night from branches and foliage. Their hair is typically reddish-brown, instead of the brown or black hair typical of other great apes.");
 			habitatField.setVisibility(View.GONE);
 			habitatContent.setVisibility(View.GONE);
@@ -723,7 +723,7 @@ public class FieldGuideActivity extends Activity {
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
 			familyField.setText("Genus: ");
-			familyContent.setText("Neofelis");
+			familyContent.setText(Html.fromHtml("<i>Neofelis</i>"));
 			descriptionContent.setText("Clouded leopards have a tan or tawny coat, and are distinctively marked with large, irregularly-shaped, dark-edged ellipses which are said to be shaped like clouds. This unique appearance gave the cat both its common and scientific species name nebulosus, which is Latin for \"cloudy\".");
 			habitatField.setVisibility(View.GONE);
 			habitatContent.setVisibility(View.GONE);
@@ -738,7 +738,7 @@ public class FieldGuideActivity extends Activity {
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
 			familyField.setText("Genus: ");
-			familyContent.setText("Agaonidae");
+			familyContent.setText(Html.fromHtml("<i>Agaonidae</i>"));
 			descriptionContent.setText("Fig wasps pollinate figs (ficus) and have a co-evolutional relationship developed for at least 80 million years. They fly farther than any other insect. The females have normal wings and the males are wingless. Their only task is to mate with female (in the fig) and make a tunnel in the fig for the female to fly out. Life cycle of the fig wasp is closely intertwined with that of the fig tree it inhabits. The wasps that inhabit a particular tree can be loosely divided into two groups; pollinating and non-pollinating. The pollinating variety forms a mutually beneficial symbiosis with the tree, whereas the non-pollinating variety is parasitic. Both life cycles, however, are very similar. Fig wasp larvae develop inside a fig inflorescence, and to reproduce, the short-lived adult female. As wasps disperse they carry pollen from their natal fig to another tree.");
 			habitatContent.setText("These fig wasps live in the tropical and subtropical areas of Sundaland.");
 			prevalenceContent.setVisibility(View.GONE);
@@ -752,7 +752,7 @@ public class FieldGuideActivity extends Activity {
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
 			familyField.setText("Genus: ");
-			familyContent.setText("Cercopithecidae");
+			familyContent.setText(Html.fromHtml("<i>Cercopithecidae</i>"));
 			descriptionContent.setText("The proboscis monkey (long-nosed monkey), is known as the bekantan in Malay. It is a reddish-brown arboreal Old World monkey that is endemic to the south-east Asian island of Borneo. Although the pig-tailed langur has traditionally also been included in this genus - a treatment still preferred by some. The monkey also goes by the Malay name monyet belanda (\"Dutch monkey\"), or even orang belanda (\"Dutchman\"), as Indonesians remarked that the Dutch colonisers often had a similarly large belly and nose (large nose can be 30 cm in length or 7 inches); the nose is a resonating chamber amplifying their warning calls; and when the animal becomes agitated its nose swells with blood (making warning calls louder and more intense).");
 			habitatField.setVisibility(View.GONE);
 			habitatContent.setVisibility(View.GONE);
@@ -762,12 +762,12 @@ public class FieldGuideActivity extends Activity {
 			speciesDrawn.setVisibility(View.GONE);
 		}
 		else if (speciesSelected.equals("sud_hornbill")) {
-			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.rhinoceros_hornbill_icon));
+			speciesPhoto.setImageDrawable(getResources().getDrawable(R.drawable.hornbill_icon));
 			commonNameContent.setText("Hornbill");
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
 			familyField.setText("Genus: ");
-			familyContent.setText("Bucerotidae");
+			familyContent.setText(Html.fromHtml("<i>Bucerotidae</i>"));
 			descriptionContent.setText("The most distinctive feature of the hornbills is the heavy bill, supported by powerful neck muscles as well as by the fused vertebrae. The large bill assists in fighting, preening, and constructing the nest, as well as catching prey. A feature unique to the hornbills is the casque, a hollow structure that runs along the upper mandible. In some species it is barely perceptible and appears to serve no function beyond reinforcing the bill. In other species it is quite large, is reinforced with bone, and has openings between the hollow centre allowing serve as a resonator for calls.");
 			habitatField.setVisibility(View.GONE);
 			habitatContent.setVisibility(View.GONE);
@@ -782,7 +782,7 @@ public class FieldGuideActivity extends Activity {
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
 			familyField.setText("Genus: ");
-			familyContent.setText("Felidae");
+			familyContent.setText(Html.fromHtml("<i>Felidae</i>"));
 			descriptionContent.setText("The tiger (Panthera tigris), a member of the Felidae family, is the largest of the four \"big cats\" in the genus Panthera. The tiger is native to much of eastern and southern Asia, and is an apex predator and an obligate carnivore. Aside from their great bulk and power, their most recognisable feature is a pattern of dark vertical stripes that overlays near-white to reddish-orange fur, with lighter underparts.");
 			habitatField.setVisibility(View.GONE);
 			habitatContent.setVisibility(View.GONE);
@@ -797,7 +797,7 @@ public class FieldGuideActivity extends Activity {
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
 			familyField.setText("Genus: ");
-			familyContent.setText("Rhinocerotidae");
+			familyContent.setText(Html.fromHtml("<i>Rhinocerotidae</i>"));
 			descriptionContent.setText("The Rhinocertoidae of Sundaland lives an estimated 30-45 years in the wild. They are the most vocal of the rhinoceros species as they produce a whistle blowing sound, but the vocalization has unknown purpose. They are solitary creatures except when pairing prior to mating and during child rearing. They are most active when eating at dawn or just after dusk, loves to wallow in mud baths to cool down and rest. In rainy seasons, the rhinos will move to higher elevations and in cooler months in the lower areas. These rhinos are fast and agile; they climb mountains easily and comfortably traverses steep slopes and riverbanks.");
 			habitatContent.setText("These rhinos live in both lowland and highland secondary rainforest, swamps and the cloud forest. They prefer hilly areas close to water, particularly steep upper valleys with a lot of undergrowth.");
 			prevalenceContent.setVisibility(View.GONE);
@@ -811,7 +811,7 @@ public class FieldGuideActivity extends Activity {
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
 			familyField.setText("Genus: ");
-			familyContent.setText("Tapiridae");
+			familyContent.setText(Html.fromHtml("<i>Tapiridae</i>"));
 			descriptionContent.setText("Also known as the Asian Tapir, the Malayan Tapir (Tapirus indicus) is the largest of the four species of tapir and the only one native to Asia. In the Malay language, the tapir is commonly referred to as \"cipan\", \"tenuk\" or \"badak tampong\". It has notable markings of a light colored patch which extends from its shoulders to its rear. The the rest of its hair is black and tips of ears white; The pattern is for camouflage. It grows to 1.8 to 2.4 meters in length and stands 90 to 107 cm tall. The females are larger than males. They have poor eyesight but excellent sense of small. They communicate with high-pitched squeaks and whistles. They are active at night, eating as soon after sunset or before sunrise.");
 			habitatContent.setText("Found in lowland rainforests. They live near water so they can bathe and swim often. They can also climb steep slopes of their habitat.");
 			prevalenceContent.setVisibility(View.GONE);
@@ -825,7 +825,7 @@ public class FieldGuideActivity extends Activity {
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
 			familyField.setText("Genus: ");
-			familyContent.setText("Leporidae");
+			familyContent.setText(Html.fromHtml("<i>Leporidae</i>"));
 			descriptionContent.setText("Leporids are small to moderately sized mammals, adapted for rapid movement. They have long hind legs, with four toes on each foot, and shorter fore legs, with five toes each. The soles of their feet are hairy, to improve grip while running, and they have strong claws on all of their toes. Leporids also have distinctive, elongated and mobile ears, and they have an excellent sense of hearing. Their eyes are large, and their night vision is good, reflecting their primarily nocturnal or crepuscular mode of living.");
 			habitatField.setVisibility(View.GONE);
 			habitatContent.setVisibility(View.GONE);
@@ -840,7 +840,7 @@ public class FieldGuideActivity extends Activity {
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
 			familyField.setText("Genus: ");
-			familyContent.setText("Rafflesia");
+			familyContent.setText(Html.fromHtml("<i>Rafflesia</i>"));
 			descriptionContent.setText("This flower has a diameter of approximately 1 m (3 ft) and weight of up to 11 kilograms (24 lb). It lives as a parasite on an unknown vine, which grows only in primary (undisturbed) rainforests. Similar to fungi, individuals grow as thread-like strands of tissue completely embedded within and in intimate contact with surrounding host cells from which nutrients and water are obtained. This plant produces no leaves, stems or roots and does not have chlorophyll. It can only be seen when it is ready to reproduce. The only part of the corpse flower that is identifiable as distinctly plant-like are the flowers; although, even these are unusual since they attain massive proportions, have a reddish-brown coloration and smell of rotting flesh.");
 			habitatField.setVisibility(View.GONE);
 			habitatContent.setVisibility(View.GONE);
@@ -855,7 +855,7 @@ public class FieldGuideActivity extends Activity {
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
 			familyField.setText("Genus: ");
-			familyContent.setText("Ficus");
+			familyContent.setText(Html.fromHtml("<i>Ficus</i>"));
 			descriptionContent.setText("Strangler fig is the common name for a number of tropical and subtropical plant species, including some banyans and unrelated vines, among many other species. Figs are known as a keystone species in the tropics, since they fruit year round providing a constant source of food for many birds and mammals. Fig-eating animals repay the trees by spreading their seeds and genetics across the forest.");
 			habitatField.setVisibility(View.GONE);
 			habitatContent.setVisibility(View.GONE);
@@ -870,7 +870,7 @@ public class FieldGuideActivity extends Activity {
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
 			familyField.setText("Genus: ");
-			familyContent.setText("Tetrastigma");
+			familyContent.setText(Html.fromHtml("<i>Tetrastigma</i>"));
 			descriptionContent.setText("The grape vine climb with tendrils and have palmately compound leaves. A species of the grape vine is notable as being the sole host of the parasitic corpse flower.");
 			habitatField.setVisibility(View.GONE);
 			habitatContent.setVisibility(View.GONE);
@@ -885,7 +885,7 @@ public class FieldGuideActivity extends Activity {
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
 			familyField.setText("Genus: ");
-			familyContent.setText("Ficus");
+			familyContent.setText(Html.fromHtml("<i>Ficus</i>"));
 			descriptionContent.setText("In some parts of its introduced range, it is very attractive to avian wildlife. Although invasive, its hardiness makes it an important species for the attraction of avian wildlife in urban environments. It is pollinated by the a species of the fig wasp.");
 			habitatField.setVisibility(View.GONE);
 			habitatContent.setVisibility(View.GONE);
@@ -900,7 +900,7 @@ public class FieldGuideActivity extends Activity {
 			scientificNameContent.setVisibility(View.GONE);
 			scientificNameField.setVisibility(View.GONE);
 			familyField.setText("Genus: ");
-			familyContent.setText("Amorphophallus");
+			familyContent.setText(Html.fromHtml("<i>Amorphophallus</i>"));
 			descriptionContent.setText("A mature underground corm (tuber) produces a huge aroid bloom (inflorescence) which is usually taller than a man. Pollination of the tall corpse flower is believed to be performed by large carrion beetles lured by the powerful odor of decaying flesh. This overpowering stench is released in waves when the flowers are ready for pollination.");
 			habitatField.setVisibility(View.GONE);
 			habitatContent.setVisibility(View.GONE);
