@@ -1,11 +1,17 @@
 package org.encorelab.sail.evoroom;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.nio.channels.FileChannel;
+
 import org.encorelab.sail.evoroom.R;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.Environment;
 import android.widget.TabHost;
 
 public class EvoroomTabWidget extends TabActivity {
@@ -44,5 +50,27 @@ public class EvoroomTabWidget extends TabActivity {
 		tabHost.setBackgroundResource(R.drawable.background);
 		
 		tabHost.setCurrentTab(2);
+		
+	    try {
+	        File sd = Environment.getExternalStorageDirectory();
+	        File data = Environment.getDataDirectory();
+
+	        if (sd.canWrite()) {
+	            String currentDBPath = "/data/org.encorelab.sail.evoroom/databases/evoroom.db";
+	            String backupDBPath = "evoroom.db";
+	            File currentDB = new File(data, currentDBPath);
+	            File backupDB = new File(sd, backupDBPath);
+
+	            if (currentDB.exists()) {
+	                FileChannel src = new FileInputStream(currentDB).getChannel();
+	                FileChannel dst = new FileOutputStream(backupDB).getChannel();
+	                dst.transferFrom(src, 0, src.size());
+	                src.close();
+	                dst.close();
+	            }
+	        }
+	    } catch (Exception e) {
+	    }
+
 	}
 }

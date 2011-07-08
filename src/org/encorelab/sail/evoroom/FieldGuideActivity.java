@@ -21,7 +21,7 @@ public class FieldGuideActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.field_guide);
-        
+        		
         setupAreaSelectorView();
         setupSpeciesSelectorView();
         setupSpeciesDisplayView();
@@ -935,9 +935,18 @@ public class FieldGuideActivity extends Activity {
 	
 }
 
-
-
-
+//pg 184 for onClick in xml 
+//
+//
+//IF-ELSES ON THE CHEAP
+//int cond1 = 1;
+//int cond2 = 2;
+//int tester = 0;
+//
+//tester = (cond1==cond2?cond1:cond2);		
+//tester is set to 2 (because condition is not met)
+//
+//
 //THIS IS AN EXAMPLE OF HOW TO DO THE onClick CORRECTLY FOR MULTIPLE LISTENERS
 //
 //@Override
